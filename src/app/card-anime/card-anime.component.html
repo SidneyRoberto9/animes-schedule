@@ -1,0 +1,10 @@
+<div *ngIf="animes">
+  <mat-card class="card" *ngIf="animes.day == day">
+    <div>
+      <mat-card-header>
+        <mat-card-title class="card-title">{{ animes.name }}</mat-card-title>
+      </mat-card-header>
+      <img mat-card-image src="{{ animes.img }}" alt="anime">
+  </div>
+  </mat-card>
+</div>

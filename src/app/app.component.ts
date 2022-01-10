@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component} from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +6,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'animes-schedule';
+  title = 'Anime schedule';
+  Day?: string;
+
+  selectedDay(day: string) {
+    this.Day = day;
+  }
 }
