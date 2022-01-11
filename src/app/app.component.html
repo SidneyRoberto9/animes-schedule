@@ -1,5 +1,5 @@
 <mat-drawer-container class="container" autosize>
-    <mat-drawer mode="side" opened>
+    <mat-drawer #drawer mode="side" class="sidenav" opened>
        <h1 class="title" ><img (click)="selectedDay('nada')" src="/assets/log.png"></h1>
        <ul class="daysOfWeek">
            <li (click)="selectedDay('Domingo')"><img src="/assets/img/dom.png"></li>
@@ -12,6 +12,8 @@
        </ul>
     </mat-drawer>
     <mat-drawer-content>
+        <button mat-mini-fab class="sideBtn" mat-button (click)="drawer.toggle()">
+        </button>
         <app-animes [Day]="Day"></app-animes>
     </mat-drawer-content>
 </mat-drawer-container>

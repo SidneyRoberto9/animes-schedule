@@ -11,8 +11,8 @@
 }
 
 .title img {
-  min-width: 220px;
-  max-width: 220px;
+  min-width: 230px;
+  max-width: 230px;
   min-height: 5rem;
   max-height: 5em;
 }
@@ -30,6 +30,18 @@
 
 .mat-drawer-inner-container {
   overflow: hidden;
+}
+
+.sideBtn {
+  position: absolute;
+  margin-top: 35px;
+  margin-left: -25px;
+  background-color: #7a868f;
+  z-index: 10;
+}
+
+.sideBtn:hover {
+  background-color: #2d3942;
 }
 
 @media (min-width: 300px) and (max-width: 1600px) {
