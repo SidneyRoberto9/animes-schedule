@@ -1,4 +1,4 @@
-import { Anime } from './anime.model';
+import { Anime } from '../components/animes/anime.model';
 
 export const ANIMES: Anime[] = [
     {
