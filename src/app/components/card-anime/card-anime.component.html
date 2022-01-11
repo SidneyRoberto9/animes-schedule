@@ -2,11 +2,24 @@
   <mat-card class="card" *ngIf="animes.day == day">
   
     <div>
+
       <mat-card-header>
         <mat-card-title class="card-title">
           <p>{{ animes.name }}</p>
         </mat-card-title>
       </mat-card-header>
+
+      <mat-card-content class="content-card">
+        <p><b>Anime:</b> {{ animes.name }}</p>
+        <p><b>Estúdio:</b> {{ animes.studio }}</p>
+        <p><b>Gênero:</b> {{ animes.genre }}</p>
+        <p><b>Sites para assistir</b></p>
+        <p><a href="{{ animes.sites.site1 }}" target="_blank">AnimesHouse.net</a></p>
+        <p><a href="{{ animes.sites.site2 }}" target="_blank">Animesonline.cc</a></p>
+        <p><a href="{{ animes.sites.site3 }}" target="_blank">Animesonline.org</a></p>
+        <p><a href="{{ animes.sites.site4 }}" target="_blank">BetterAnime.net</a></p>
+       
+      </mat-card-content>
 
       <img mat-card-image src="{{ animes.img }}" alt="anime">
     </div>

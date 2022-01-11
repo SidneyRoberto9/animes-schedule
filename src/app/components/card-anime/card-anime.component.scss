@@ -5,6 +5,12 @@
   min-height: 23rem;
   margin: 20px;
   background-color: #49555e;
+  z-index: 2;
+}
+
+.content-card {
+  display: none;
+  text-align: left;
 }
 
 .card-title {
@@ -15,7 +21,7 @@
   color: aliceblue;
 }
 
-p {
+.card-title p {
   margin: 0 auto;
   text-align: center;
 }
@@ -26,4 +32,18 @@ img {
   max-height: 20rem;
   min-height: 20rem;
   margin: 0 auto;
+}
+
+.card:hover {
+  background-color: #f6f2d2;
+  .content-card {
+    display: inline;
+    color: black;
+  }
+  .card-title {
+    display: none;
+  }
+  img {
+    display: none;
+  }
 }
