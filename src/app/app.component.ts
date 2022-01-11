@@ -7,9 +7,9 @@ import { Component} from '@angular/core';
 })
 export class AppComponent {
   title = 'Anime schedule';
-  Day?: string;
+  day?: string = 'nada';
 
   selectedDay(day: string) {
-    this.Day = day;
+    this.day = day;
   }
 }

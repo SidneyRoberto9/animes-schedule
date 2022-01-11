@@ -8,7 +8,7 @@ import { AnimesService } from '../../services/animes.service';
   styleUrls: ['./animes.component.scss']
 })
 export class AnimesComponent implements OnInit {
-  @Input() Day?: String;
+  @Input() day?: String;
   animes: Anime[] = [];
 
   constructor(private animesService: AnimesService) {}

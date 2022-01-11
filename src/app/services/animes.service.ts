@@ -8,8 +8,8 @@ import { ANIMES } from '../mocks/mock-animes';
 })
 export class AnimesService {
   getAnimes(): Observable<Anime[]> {
-    const animes = of(ANIMES);
+    const animes$ = of(ANIMES);
 
-    return animes;
+    return animes$;
   }
 }

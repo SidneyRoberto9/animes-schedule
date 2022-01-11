@@ -1,13 +1,11 @@
 <div>
-    <div class="gif" *ngIf="Day == undefined"></div>
-
     <div class="wrapper">
         <div *ngFor="let anime of animes" style="list-style: none;">
-            <app-card-anime [day]="Day" [animes]="anime"></app-card-anime>
+            <app-card-anime [day]="day" [animes]="anime"></app-card-anime>
         </div>
-        <div class="gif" *ngIf="Day == 'nada'"></div>
+        <div class="gif" *ngIf="day == 'nada'"></div>
     </div>
-        
+    
 </div>
 
 
