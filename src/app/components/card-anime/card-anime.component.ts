@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Anime } from 'src/app/components/animes/anime.model';
+import { Anime } from 'src/app/model/anime.model';
 
 @Component({
   selector: 'app-card-anime',

@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
-import { Anime } from '../components/animes/anime.model';
+import { Anime } from '../model/anime.model';
 import { ANIMES } from '../mocks/mock-animes';
 
 @Injectable({
