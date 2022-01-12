@@ -2,15 +2,9 @@
   <mat-card class="card" *ngIf="animes.day == day">
   
     <div>
-
-      <mat-card-header>
-        <mat-card-title class="card-title">
-          <p>{{ animes.name }}</p>
-        </mat-card-title>
-      </mat-card-header>
-
       <mat-card-content class="content-card">
-        <p><b>Anime:</b> {{ animes.name }}</p>
+
+        <p><b>Anime Name:</b> {{ animes.name }}</p>
         <p><b>Estúdio:</b> {{ animes.studio }}</p>
         <p><b>Gênero:</b> {{ animes.genre }}</p>
         <p><b>Sites para assistir</b></p>
@@ -22,6 +16,7 @@
       </mat-card-content>
 
       <img mat-card-image src="{{ animes.img }}" alt="anime">
+      <p id="name">{{ animes.name }}</p>
     </div>
   </mat-card>
 </div>

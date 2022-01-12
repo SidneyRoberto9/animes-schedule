@@ -28,32 +28,6 @@ export const ANIMES: Anime[] = [
         }
     },
     {
-        day: "Domingo", 
-        name: "Futsal Boys!!!!!", 
-        img: "https://cdn.myanimelist.net/images/anime/1475/120394.jpg",
-        studio: "Diomedéa",
-        genre: "Sports",
-        sites:{
-            site1: "https://animeshouse.net/anime/futsal-boys/",
-            site2: "https://animefire.net/animes/futsal-boys-todos-os-episodios",
-            site3: "https://animesonline.org/animes/futsal-boys/",
-            site4: "https://betteranime.net/anime/legendado/futsal-boys"
-        }
-    },
-    {
-        day: "Domingo", 
-        name: "Sasaki to Miyano", 
-        img: "https://cdn.myanimelist.net/images/anime/1182/119308.jpg",
-        studio: "Studio Deen",
-        genre: "Boys Love, Slice of Life, School",
-        sites:{
-            site1: "https://animeshouse.net/anime/sasaki-to-miyano/",
-            site2: "https://animefire.net/animes/sasaki-to-miyano-todos-os-episodios",
-            site3: "https://animesonline.org/animes/sasaki-to-miyano/",
-            site4: "https://betteranime.net/anime/legendado/sasaki-to-miyano"
-        }
-    },
-    {
         day: "Sábado", 
         name: "Shikkakumon no Saikyou Kenja", 
         img: "https://cdn.myanimelist.net/images/anime/1132/120388.jpg",
@@ -249,7 +223,7 @@ export const ANIMES: Anime[] = [
         }
     },
     {
-        day: "Quinta", 
+        day: "Quarta", 
         name: "Tokyo 24-ku", 
         img: "https://cdn.myanimelist.net/images/anime/1442/120112.jpg",
         studio: "CloverWorks",
