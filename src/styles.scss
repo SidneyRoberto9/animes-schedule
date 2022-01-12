@@ -11,3 +11,12 @@ body {
   margin: 0;
   font-family: Roboto, "Helvetica Neue", sans-serif;
 }
+
+.mat-drawer {
+  padding: 20px;
+  background-color: #7a868f;
+}
+
+.mat-drawer-inner-container {
+  overflow: hidden !important;
+}

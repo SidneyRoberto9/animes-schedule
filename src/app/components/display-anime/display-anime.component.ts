@@ -4,15 +4,11 @@ import { AnimesService } from '../../services/animes.service';
 import { Observable } from 'rxjs';
 
 @Component({
-  selector: 'app-animes',
+  selector: 'app-display-animes',
   templateUrl: './display-anime.component.html',
   styleUrls: ['./display-anime.component.scss']
 })
 export class DisplayAnimeComponent {
   @Input() day?: String;
-  constructor(private animesService: AnimesService) {}
-
-  get animes$(): Observable<Anime[]> {
-   return this.animesService.getAnimes();
-  }
+  @Input() animes$?: Observable<Anime[]>;
 }
