@@ -184,20 +184,20 @@ export const ANIMES: Anime[] = [
         }
     },
     {
-        day: "Quinta", 
+        day: "Quarta", 
         name: "Koroshi Ai", 
         img: "https://cdn.myanimelist.net/images/anime/1485/119329.jpg",
         studio: "Platinum Vision",
         genre: "Action, Romance, Josei",
         sites:{
-            site1: "",
-            site2: "",
+            site1: "https://animeshouse.net/anime/koroshi-ai/",
+            site2: "https://animesonline.cc/anime/koroshi-ai/",
             site3: "https://animesonline.org/animes/koroshi-ai/",
             site4: "https://betteranime.net/anime/legendado/koroshi-ai"
         }
     },
     {
-        day: "Quinta", 
+        day: "Quarta", 
         name: "Orient", 
         img: "https://cdn.myanimelist.net/images/anime/1576/119361.jpg",
         studio: "A.C.G.T.",
@@ -376,6 +376,19 @@ export const ANIMES: Anime[] = [
             site2: "https://animesonline.cc/anime/ousama-ranking/",
             site3: "https://animesonline.org/animes/ousama-ranking/",
             site4: "https://betteranime.net/anime/legendado/ousama-ranking"
+        }
+    },
+    {
+        day: "Quarta", 
+        name: "Leadale no Daichi nite", 
+        img: "https://cdn.myanimelist.net/images/anime/1084/120149.jpg",
+        studio: "Maho Film",
+        genre: "Adventure, Fantasy",
+        sites:{
+            site1: "https://animeshouse.net/anime/leadale-no-daichi-nite/",
+            site2: "https://animesonline.cc/anime/leadale-no-daichi-nite/",
+            site3: "https://animesonline.org/animes/leadale-no-daichi-nite/",
+            site4: "https://betteranime.net/anime/legendado/leadale-no-daichi-nite-2"
         }
     },
 ];
