@@ -1,6 +1,6 @@
 <div *ngIf="animes">
   <mat-card class="card" *ngIf=" animes.airing_start == day 
-  && !animes.r18 && !animes.kids || day == -1">
+  && !animes.r18 && !animes.kids || day == -1 && !animes.r18 && !animes.kids">
   
     <div>
       <mat-card-content class="content-card">
