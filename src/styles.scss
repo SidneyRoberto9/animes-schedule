@@ -17,6 +17,6 @@ body {
   background-color: #7a868f;
 }
 
-.mat-drawer-inner-container {
-  overflow: hidden !important;
+.mat-drawer-inner-container::-webkit-scrollbar {
+  display: none !important;
 }
