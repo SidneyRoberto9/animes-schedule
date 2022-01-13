@@ -1,9 +1,10 @@
 
 <div class="wrapper">
-    <div *ngFor="let anime of animes$ | async" >
+    <div *ngFor="let anime of animes$ | async " >
       <app-card-anime [day]="day" [animes]="anime"></app-card-anime>
     </div>
     <div class="gif" *ngIf="day == 'nada'"></div>
 </div>
  
 
+ 
