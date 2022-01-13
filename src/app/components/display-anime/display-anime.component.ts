@@ -1,6 +1,5 @@
 import { Component, Input} from '@angular/core';
-import { Anime } from '../../model/anime.model';
-import { AnimesService } from '../../services/animes.service';
+import { Jinkan } from '../../model/anime.model';
 import { Observable } from 'rxjs';
 
 @Component({
@@ -9,6 +8,6 @@ import { Observable } from 'rxjs';
   styleUrls: ['./display-anime.component.scss']
 })
 export class DisplayAnimeComponent {
-  @Input() day?: String;
-  @Input() animes$?: Observable<Anime[]>;
+  @Input() day?: number;
+  @Input() animes$?: Observable<Jinkan[]>;
 }

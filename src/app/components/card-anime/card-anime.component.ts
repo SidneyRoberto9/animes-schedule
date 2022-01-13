@@ -1,5 +1,5 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { Anime } from 'src/app/model/anime.model';
+import { Component, Input} from '@angular/core';
+import { Jinkan } from 'src/app/model/anime.model';
 
 @Component({
   selector: 'app-card-anime',
@@ -7,7 +7,8 @@ import { Anime } from 'src/app/model/anime.model';
   styleUrls: ['./card-anime.component.scss']
 })
 export class CardAnimeComponent{
-  @Input() day?: String;
-  @Input() animes?: Anime;
+  @Input() day?: number;
+  @Input() animes?: Jinkan;
 
+  constructor() {}
 }

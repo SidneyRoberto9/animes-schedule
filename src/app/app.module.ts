@@ -9,14 +9,15 @@ import { CardAnimeComponent } from './components/card-anime/card-anime.component
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
-import { HomeComponent } from './pages/home/home.component';
+import { HomePage } from './pages/home/home.page';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
     AppComponent,
     CardAnimeComponent,
     DisplayAnimeComponent,
-    HomeComponent
+    HomePage
   ],
   imports: [
     BrowserModule,
@@ -25,9 +26,10 @@ import { HomeComponent } from './pages/home/home.component';
     MatCardModule,
     MatSidenavModule,
     MatButtonModule,
-    MatIconModule
+    MatIconModule,
+    HttpClientModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [ AppComponent ]
 })
 export class AppModule { }

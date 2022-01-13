@@ -33,6 +33,14 @@ img {
   color: aliceblue;
   text-align: center;
 }
+
+.sinop {
+  max-height: 120px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 6;
+}
+
 .card:hover {
   background-color: #f6f2d2;
   .content-card {

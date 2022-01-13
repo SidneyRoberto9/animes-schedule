@@ -1,15 +1,54 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable, of } from 'rxjs';
-import { Anime } from '../model/anime.model';
-import { ANIMES } from '../mocks/mock-animes';
+import { map, Observable } from 'rxjs';
+import { Jinkan, RootObject } from '../model/anime.model';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class AnimesService {
-  getAnimes(): Observable<Anime[]> {
-    const animes$ = of(ANIMES);
+  constructor(private http: HttpClient) {}
 
-    return animes$;
+  private readonly BASE_URL = 'https://api.jikan.moe/v3/season';
+  animes$: Observable<Jinkan[]>;
+
+  getAnimes(): void {
+    this.animes$ = this.http.get<RootObject>(this.BASE_URL).pipe(
+      map((data) => {
+        const animes = data.anime;
+        const jikanAnimes: Jinkan[] = animes.map(
+          ({
+            title,
+            image_url,
+            synopsis,
+            airing_start,
+            genres,
+            producers,
+            score,
+            themes,
+            demographics,
+            explicit_genres,
+            r18,
+            kids,
+          }) => {
+            const date = new Date(airing_start).getDay();
+            const [animeProducers] = producers;
+            const animeGenres = [genres, themes, demographics, explicit_genres];
+            return {
+              title,
+              image_url,
+              synopsis,
+              airing_start: date,
+              genres: animeGenres.flatMap((genre) => genre),
+              producers: animeProducers,
+              score,
+              r18,
+              kids,
+            };
+          }
+        );
+        return jikanAnimes;
+      })
+    );
   }
 }
