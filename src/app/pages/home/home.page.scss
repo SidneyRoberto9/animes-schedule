@@ -14,7 +14,7 @@
 
 .daysOfWeek {
   list-style: none;
-  padding-top: 100px;
+  padding-top: 0px;
   padding-left: 0px;
 }
 
@@ -33,13 +33,4 @@
 
 .sideBtn:hover {
   background-color: #2d3942;
-}
-
-@media (min-width: 300px) and (max-width: 1600px) {
-  .daysOfWeek {
-    padding-top: 0px;
-  }
-  .mat-drawer {
-    padding: 15px;
-  }
 }
