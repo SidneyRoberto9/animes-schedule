@@ -17,6 +17,18 @@ body {
   background-color: #7a868f;
 }
 
-.mat-drawer-inner-container::-webkit-scrollbar {
+footer {
+  text-align: center;
+  color: aliceblue;
+}
+
+footer a:hover {
+  color: forestgreen;
+  cursor: pointer;
+}
+
+.mat-drawer-inner-container::-webkit-scrollbar,
+mat-drawer-content::-webkit-scrollbar,
+body::-webkit-scrollbar {
   display: none !important;
 }
