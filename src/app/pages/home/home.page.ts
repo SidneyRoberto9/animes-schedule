@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Jinkan } from 'src/app/model/anime.model';
 import { AnimesService } from 'src/app/services/animes.service';

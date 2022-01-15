@@ -13,21 +13,20 @@
   cursor: pointer;
 }
 
-.daysOfWeek {
+.sidenav {
+  width: 220px;
+}
+
+.nav {
+  font-size: 30px;
   list-style: none;
   padding-top: 0px;
   padding-left: 0px;
-}
-
-.daysOfWeek img {
-  width: 220px;
-  cursor: pointer;
+  li {
+    cursor: pointer;
+  }
 }
 
 .spacer {
   flex: 1 1 auto;
-}
-
-.daysOfWeek img:hover {
-  filter: grayscale(100%);
 }

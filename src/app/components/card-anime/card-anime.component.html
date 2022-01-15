@@ -1,15 +1,14 @@
 
 <div *ngIf="animes" >
-
-  <mat-card class="card" 
-  *ngIf=" animes.airing_start == day && !animes.r18 && !animes.kids 
-  || day == -1 && !animes.r18 && !animes.kids"
-  (click)="openDetails()">
-  
-    <div>
-      <p></p>
-      <img mat-card-image src="{{ animes?.image_url }}" alt="anime">
-      <p id="name">{{ animes?.title }}</p>
-    </div>
-  </mat-card>
+      <mat-card class="card" 
+      *ngIf=" animes.airing_start == day && !animes.r18 && !animes.kids 
+      || day == -1 && !animes.r18 && !animes.kids"
+      (click)="openDetails()">
+      
+        <div>
+          <p></p>
+          <img mat-card-image src="{{ animes?.image_url }}" alt="anime">
+          <p id="name">{{ animes?.title }}</p>
+        </div>
+      </mat-card>
 </div>
