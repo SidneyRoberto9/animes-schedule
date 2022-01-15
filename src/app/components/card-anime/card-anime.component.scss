@@ -15,6 +15,10 @@
     background-color: #f6f2d2;
     transform: translateY(-5px);
     cursor: pointer;
+    .animes-image {
+      transition: filter 1s;
+      filter: grayscale(40%);
+    }
   }
 
   .insert {
@@ -43,15 +47,17 @@
   }
 
   #name {
-    font-family: "Varela Round", sans-serif;
     position: absolute;
     top: 340px;
     left: 10px;
-    text-align: left;
-    width: 200px;
-    height: 4px;
-    font-size: 13px;
-    color: aliceblue;
+    width: 220px;
+    height: 4.5ch;
     z-index: 2;
+    font-family: "Varela Round", sans-serif;
+    font-size: 13px;
+    text-overflow: Ellipsis;
+    overflow: hidden;
+    text-align: left;
+    color: aliceblue;
   }
 }
