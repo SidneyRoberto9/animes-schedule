@@ -1,6 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
 html {
-  background-color: #2d3942;
+  background-color: #2b2118;
 }
 
 html,
@@ -32,8 +32,14 @@ footer a:hover {
   cursor: pointer;
 }
 
+.mat-dialog-container {
+  background: #f6f2d2 !important;
+  border: black solid 2px;
+  border-radius: 10px;
+}
 .mat-drawer-inner-container::-webkit-scrollbar,
 mat-drawer-content::-webkit-scrollbar,
+mat-dialog-content::-webkit-scrollbar,
 body::-webkit-scrollbar {
   display: none !important;
 }

@@ -23,6 +23,10 @@
   cursor: pointer;
 }
 
+.daysOfWeek img:hover {
+  filter: grayscale(100%);
+}
+
 .sideBtn {
   position: fixed;
   margin-top: 35px;

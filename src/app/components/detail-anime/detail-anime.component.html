@@ -1,0 +1,8 @@
+<mat-dialog-content class="dialog">
+    <p><img src="{{ data?.image_url }}" alt=""></p>
+    <p><b>Anime:</b> {{ data?.title }}</p>
+    <p><b>Score:</b> {{ data.score }}</p>
+    <p><b>Estúdio:</b> {{ data?.producers?.name }}</p>
+    <p><b>Gênero:</b><span *ngFor="let gn of data?.genres"> {{ gn.name }}, </span></p>
+    <p><b>Sinopse:</b> {{ data?.synopsis }}</p>
+</mat-dialog-content>

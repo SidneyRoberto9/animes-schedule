@@ -2,8 +2,10 @@
   max-width: 340px;
   width: 200px;
   height: 25rem;
-  margin: 20px;
+  margin: 25px;
   background-color: #49555e;
+  transition: width 0.3s, height 0.3s, background-color 1s, 0.5s, filter 1.5s,
+    font 0.5s;
   border-radius: 10px;
   z-index: 2;
 }
@@ -44,15 +46,22 @@ img {
 
 .card:hover {
   background-color: #f6f2d2;
+  left: -10px;
+  top: -10px;
+  width: 220px;
+  height: 25rem;
+  cursor: pointer;
   .content-card {
     display: inline;
     color: black;
   }
-  #name {
-    display: none;
-  }
   img {
-    display: none;
+    width: 215px;
+    height: 21rem;
+    filter: grayscale(50%);
+  }
+  #name {
+    color: black;
   }
 }
 

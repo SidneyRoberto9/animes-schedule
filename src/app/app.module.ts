@@ -11,13 +11,15 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { HomePage } from './pages/home/home.page';
 import { HttpClientModule } from '@angular/common/http';
-
+import { DetailAnimeComponent } from './components/detail-anime/detail-anime.component';
+import { MatDialogModule } from '@angular/material/dialog';
 @NgModule({
   declarations: [
     AppComponent,
     CardAnimeComponent,
     DisplayAnimeComponent,
-    HomePage
+    HomePage,
+    DetailAnimeComponent
   ],
   imports: [
     BrowserModule,
@@ -27,7 +29,8 @@ import { HttpClientModule } from '@angular/common/http';
     MatSidenavModule,
     MatButtonModule,
     MatIconModule,
-    HttpClientModule
+    HttpClientModule,
+    MatDialogModule
   ],
   providers: [],
   bootstrap: [ AppComponent ]

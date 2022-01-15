@@ -22,5 +22,4 @@ export class HomePage {
   selectedDay(day: number): void {
     this.day = day;
   }
-
 }
