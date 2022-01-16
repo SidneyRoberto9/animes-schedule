@@ -61,3 +61,19 @@
     color: aliceblue;
   }
 }
+
+@media (max-width: 415px), (max-height: 918px) {
+  .card {
+    width: 180px;
+    margin: 10px;
+    height: 18rem;
+
+    #name {
+      top: 245px;
+      left: 5px;
+      width: 180px;
+      height: 5ch;
+      font-size: 11px;
+    }
+  }
+}
