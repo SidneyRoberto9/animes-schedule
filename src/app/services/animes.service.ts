@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { map, Observable } from 'rxjs';
+import { BehaviorSubject, map, Observable } from 'rxjs';
 import { Jinkan, RootObject } from '../model/anime.model';
 
 @Injectable({
@@ -8,6 +8,8 @@ import { Jinkan, RootObject } from '../model/anime.model';
 })
 export class AnimesService {
   constructor(private http: HttpClient) {}
+  details = new BehaviorSubject<boolean>(true);
+  Actualanime = new BehaviorSubject<Jinkan>({} as Jinkan);
 
   private readonly BASE_URL = 'https://api.jikan.moe/v3/season';
   animes$: Observable<Jinkan[]>;
@@ -50,5 +52,21 @@ export class AnimesService {
         return jikanAnimes;
       })
     );
+  }
+
+  setActualAnime(anime: Jinkan){
+    this.Actualanime.next(anime);
+  }
+
+  getActualAnime(){
+    return this.Actualanime.asObservable();
+  }
+
+  setDetails(details: boolean){
+    this.details.next(details);
+  }
+
+  getDetails(){
+    return this.details.asObservable();
   }
 }

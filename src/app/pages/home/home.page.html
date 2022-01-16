@@ -3,11 +3,11 @@
     <button mat-icon-button class="sideBtn" (click)="drawer.toggle()">
       <mat-icon>menu</mat-icon>
     </button>
-    <h1 class="title" ><img (click)="selectedDay(8)" src="/assets/log.png"></h1>
+    <h1 class="title" ><img (click)="selectedDay(100)" src="/assets/log.png"></h1>
 
     <span class="spacer"></span>
 
-    <button mat-icon-button routerLink="/Config">
+    <button mat-icon-button>
         <mat-icon>settings</mat-icon>
     </button>
 
@@ -15,7 +15,7 @@
 
 <mat-drawer-container class="container">
     
-    <mat-drawer #drawer mode="over" class="sidenav" opened>
+    <mat-drawer #drawer mode="over" class="sidenav" >
      
        <ul class="daysOfWeek">
             <li (click)="selectedDay(-1); drawer.close()"><img src="/assets/img/all.png"></li>
@@ -29,8 +29,8 @@
        </ul>
     </mat-drawer>
     <mat-drawer-content>
- 
-        <app-display-animes [day]="day"  [animes$]="animes$"></app-display-animes> 
+        <app-detail-anime *ngIf="!detalhes"></app-detail-anime>
+        <app-display-animes [day]="day"  [animes$]="animes$" *ngIf="detalhes"></app-display-animes> 
     </mat-drawer-content>
 </mat-drawer-container>
 

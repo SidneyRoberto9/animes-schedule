@@ -1,6 +1,7 @@
 import { Component, Input} from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { Jinkan } from 'src/app/model/anime.model';
+import { AnimesService } from 'src/app/services/animes.service';
 import { DetailAnimeComponent } from '../detail-anime/detail-anime.component';
 
 @Component({
@@ -10,17 +11,12 @@ import { DetailAnimeComponent } from '../detail-anime/detail-anime.component';
 })
 export class CardAnimeComponent{
   @Input() day?: number;
-  @Input() animes?: Jinkan;
-  constructor(public dialog: MatDialog) {}
+  @Input() animes: Jinkan;
+  constructor(public animesService: AnimesService) {}
 
   openDetails(): void {
-    const dialogRef = this.dialog.open(DetailAnimeComponent, {
-      data: this.animes
-    });
-
-    dialogRef.afterClosed().subscribe(result => {
-      console.log(`Dialog result: ${result}`);
-    });
+    this.animesService.setActualAnime(this.animes);
+    this.animesService.details.next(false);
   }
 
   

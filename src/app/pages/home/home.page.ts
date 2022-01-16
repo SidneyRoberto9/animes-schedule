@@ -9,10 +9,12 @@ import { AnimesService } from 'src/app/services/animes.service';
   styleUrls: ['./home.page.scss']
 })
 export class HomePage {
-  day?: number = 8;
+  day?: number = 100;
+  detalhes:boolean;
 
   constructor(private animesService: AnimesService) {
     this.animesService.getAnimes();
+    this.animesService.getDetails().subscribe((detalhes) => this.detalhes = detalhes);
   }
 
   get animes$(): Observable<Jinkan[]> {
@@ -21,5 +23,6 @@ export class HomePage {
 
   selectedDay(day: number): void {
     this.day = day;
+    this.animesService.setDetails(true);
   }
 }
