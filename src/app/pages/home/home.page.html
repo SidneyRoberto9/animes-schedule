@@ -7,7 +7,7 @@
 
     <span class="spacer"></span>
 
-    <button mat-icon-button>
+    <button mat-icon-button (click)="showConfig()">
         <mat-icon>settings</mat-icon>
     </button>
 
@@ -29,8 +29,9 @@
        </ul>
     </mat-drawer>
     <mat-drawer-content>
+        <app-config *ngIf="!config"></app-config>
         <app-detail-anime *ngIf="!detalhes"></app-detail-anime>
-        <app-display-animes [day]="day"  [animes$]="animes$" *ngIf="detalhes"></app-display-animes> 
+        <app-display-animes [detalhes]="detalhes" [day]="day"  [animes$]="animes$" *ngIf="detalhes || config"></app-display-animes> 
     </mat-drawer-content>
 </mat-drawer-container>
 

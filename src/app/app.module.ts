@@ -1,20 +1,21 @@
+import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
+import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatIconModule } from '@angular/material/icon';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { DisplayAnimeComponent } from './components/display-anime/display-anime.component';
 import { CardAnimeComponent } from './components/card-anime/card-anime.component';
-import { MatSidenavModule } from '@angular/material/sidenav';
-import { MatButtonModule } from '@angular/material/button';
-import { MatIconModule } from '@angular/material/icon';
-import { HomePage } from './pages/home/home.page';
-import { HttpClientModule } from '@angular/common/http';
+import { ConfigComponent } from './components/config/config.component';
 import { DetailAnimeComponent } from './components/detail-anime/detail-anime.component';
-import { MatDialogModule } from '@angular/material/dialog';
-import { MatToolbarModule } from '@angular/material/toolbar';
-import { SettingsPage } from './pages/settings/settings.page';
+import { DisplayAnimeComponent } from './components/display-anime/display-anime.component';
+import { HomePage } from './pages/home/home.page';
 
 @NgModule({
   declarations: [
@@ -22,8 +23,8 @@ import { SettingsPage } from './pages/settings/settings.page';
     CardAnimeComponent,
     DisplayAnimeComponent,
     HomePage,
-    SettingsPage,
-    DetailAnimeComponent
+    DetailAnimeComponent,
+    ConfigComponent
   ],
   imports: [
     BrowserModule,
@@ -34,7 +35,6 @@ import { SettingsPage } from './pages/settings/settings.page';
     MatButtonModule,
     MatIconModule,
     HttpClientModule,
-    MatDialogModule,
     MatToolbarModule
   ],
   providers: [],

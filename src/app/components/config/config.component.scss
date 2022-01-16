@@ -1,0 +1,16 @@
+.init {
+  margin: 25px;
+
+  h1 {
+    color: aliceblue;
+  }
+
+  p,
+  a {
+    color: black;
+    text-decoration: none;
+    a:hover {
+      color: aliceblue;
+    }
+  }
+}

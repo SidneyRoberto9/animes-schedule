@@ -1,6 +1,8 @@
-import { Component, Input} from '@angular/core';
-import { Jinkan } from '../../model/anime.model';
 import { Observable } from 'rxjs';
+
+import { Component, Input } from '@angular/core';
+
+import { Jinkan } from '../../model/anime.model';
 
 @Component({
   selector: 'app-display-animes',
@@ -10,4 +12,6 @@ import { Observable } from 'rxjs';
 export class DisplayAnimeComponent {
   @Input() day?: number;
   @Input() animes$?: Observable<Jinkan[]>;
+  @Input() detalhes?: boolean;
+
 }

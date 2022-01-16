@@ -1,8 +1,8 @@
-import { Component, Inject, Input, OnInit } from '@angular/core';
-import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { Observable } from 'rxjs';
 import { Jinkan } from 'src/app/model/anime.model';
 import { AnimesService } from 'src/app/services/animes.service';
+
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-detail-anime',

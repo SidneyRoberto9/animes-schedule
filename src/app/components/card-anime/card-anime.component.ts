@@ -1,7 +1,9 @@
-import { Component, Input} from '@angular/core';
-import { MatDialog } from '@angular/material/dialog';
 import { Jinkan } from 'src/app/model/anime.model';
 import { AnimesService } from 'src/app/services/animes.service';
+
+import { Component, Input } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
+
 import { DetailAnimeComponent } from '../detail-anime/detail-anime.component';
 
 @Component({
