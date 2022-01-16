@@ -11,9 +11,15 @@ import { Component, Input } from '@angular/core';
 })
 export class DetailAnimeComponent  {
   @Input() details: Observable<boolean>;
+  @Input() detalhes: boolean;
   data: Jinkan;
 
   constructor(private animesService: AnimesService) {
     this.animesService.getActualAnime().subscribe((anime) => this.data = anime);
+    this.animesService.getDetails().subscribe((details) => this.detalhes = details);
+  }
+
+  hideDetalhes() {
+    this.animesService.setDetails(true);
   }
 }

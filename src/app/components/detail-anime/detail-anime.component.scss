@@ -1,17 +1,23 @@
-.init {
-  max-width: 320px;
-  background: #f6f2d2;
-  margin: 25px;
+.display {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .init {
+    max-width: 300px;
+    background: #f6f2d2;
+    margin: 25px;
+  }
 }
 
 img {
   margin-top: 10px;
-  margin-left: 37px;
+  margin-left: 20px;
   border: solid #2d3942 3px;
   border-radius: 10px;
 }
 
 p {
   padding-left: 10px;
-  max-width: 270px;
+  max-width: 255px;
 }
