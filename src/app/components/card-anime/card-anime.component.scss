@@ -77,3 +77,19 @@
     }
   }
 }
+
+@media (max-width: 360px), (max-height: 742px) {
+  .card {
+    width: 165px;
+    margin: 5px;
+    height: 17rem;
+
+    #name {
+      top: 230px;
+      left: 5px;
+      width: 150px;
+      height: 5ch;
+      font-size: 11px;
+    }
+  }
+}
