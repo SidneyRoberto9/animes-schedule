@@ -12,7 +12,6 @@ import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CardAnimeComponent } from './components/card-anime/card-anime.component';
-import { ConfigComponent } from './components/config/config.component';
 import { DetailAnimeComponent } from './components/detail-anime/detail-anime.component';
 import { DisplayAnimeComponent } from './components/display-anime/display-anime.component';
 import { HomePage } from './pages/home/home.page';
@@ -25,7 +24,6 @@ import { SortByPipe } from './pipes/sort-by.pipe';
     DisplayAnimeComponent,
     HomePage,
     DetailAnimeComponent,
-    ConfigComponent,
     SortByPipe
   ],
   imports: [
