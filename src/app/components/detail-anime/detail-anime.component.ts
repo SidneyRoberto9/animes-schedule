@@ -17,6 +17,7 @@ export class DetailAnimeComponent  {
   constructor(private animesService: AnimesService) {
     this.animesService.getActualAnime().subscribe((anime) => this.data = anime);
     this.animesService.getDetails().subscribe((details) => this.detalhes = details);
+
   }
 
   hideDetalhes() {

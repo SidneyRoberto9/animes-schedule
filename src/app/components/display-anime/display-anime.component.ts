@@ -1,5 +1,7 @@
 import { Observable } from 'rxjs';
+
 import { Component, Input, OnInit } from '@angular/core';
+
 import { Jinkan } from '../../model/anime.model';
 
 @Component({
