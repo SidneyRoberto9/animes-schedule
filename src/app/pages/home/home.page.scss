@@ -1,12 +1,41 @@
 .container {
   width: 100%;
   height: 93%;
-  background-color: #18191a;
+  background-color: var(--display-bg);
+}
+p {
+  color: var(--text-p);
+}
+
+a {
+  text-decoration: none;
+  color: var(--text-p);
+
+  &:hover {
+    color: gray;
+  }
+}
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  margin: 25px;
 }
 
 .toolbar {
   width: 100%;
   height: 7%;
+}
+
+.sideconfig {
+  width: 250px;
+  max-width: 250px;
+}
+
+.config {
+  list-style: none;
+  color: var(--text-p);
 }
 
 .title img {

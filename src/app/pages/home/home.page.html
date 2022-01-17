@@ -1,37 +1,49 @@
 <mat-toolbar class="toolbar">
 
-    <button mat-icon-button class="sideBtn" (click)="drawer.toggle()">
+    <button mat-icon-button class="sideBtn" (click)="nav.toggle(); config.close()">
       <mat-icon>menu</mat-icon>
     </button>
     <h1 class="title" ><img (click)="selectedDay(100)" src="/assets/log.png"></h1>
 
     <span class="spacer"></span>
 
-    <button mat-icon-button (click)="showConfig()">
+    <button mat-icon-button (click)="config.toggle(); nav.close()">
         <mat-icon>settings</mat-icon>
     </button>
 
 </mat-toolbar>
 
 <mat-drawer-container class="container">
-    
-    <mat-drawer #drawer mode="over" class="sidenav" >
+    <mat-drawer #nav mode="over" class="sidenav" position="start">
      
-       <ul class="daysOfWeek">
-            <li (click)="selectedDay(-1); drawer.close()"><img src="/assets/img/all.png"></li>
-            <li (click)="selectedDay(0); drawer.close()"><img src="/assets/img/dom.png"></li>
-            <li (click)="selectedDay(1); drawer.close()"><img src="/assets/img/seg.png"></li>
-            <li (click)="selectedDay(2); drawer.close()"><img src="/assets/img/ter.png"></li>
-            <li (click)="selectedDay(3); drawer.close()"><img src="/assets/img/qua.png"></li>
-            <li (click)="selectedDay(4); drawer.close()"><img src="/assets/img/qui.png"></li>
-            <li (click)="selectedDay(5); drawer.close()"><img src="/assets/img/sex.png"></li>
-            <li (click)="selectedDay(6); drawer.close()"><img src="/assets/img/sab.png"></li>
-       </ul>
+        <ul class="daysOfWeek">
+             <li (click)="selectedDay(-1); nav.close()"><img src="/assets/img/all.png"></li>
+             <li (click)="selectedDay(0); nav.close()"><img src="/assets/img/dom.png"></li>
+             <li (click)="selectedDay(1); nav.close()"><img src="/assets/img/seg.png"></li>
+             <li (click)="selectedDay(2); nav.close()"><img src="/assets/img/ter.png"></li>
+             <li (click)="selectedDay(3); nav.close()"><img src="/assets/img/qua.png"></li>
+             <li (click)="selectedDay(4); nav.close()"><img src="/assets/img/qui.png"></li>
+             <li (click)="selectedDay(5); nav.close()"><img src="/assets/img/sex.png"></li>
+             <li (click)="selectedDay(6); nav.close()"><img src="/assets/img/sab.png"></li>
+        </ul>
+     </mat-drawer>
+
+    <mat-drawer #config mode="over" class="sideconfig" position="end">
+        <ul class="config">
+            <li>
+                <mat-slide-toggle (change)="onChange($event)">Light mode</mat-slide-toggle>
+            </li>
+        </ul>
+        <div class="footer">
+            <p>@Copyright 2022 AnimesSchedule. All rights reserved.</p>
+            <p>Files are provided by <a href="https://github.com/SidneyRoberto9" target="_blank">SidneyRoberto9</a> & Ninh0.</p>
+        </div>
     </mat-drawer>
+    
+   
     <mat-drawer-content>
-        <app-config *ngIf="!config"></app-config>
         <app-detail-anime *ngIf="!detalhes"></app-detail-anime>
-        <app-display-animes [detalhes]="detalhes" [day]="day"  [animes$]="animes$" *ngIf="detalhes || config"></app-display-animes> 
+        <app-display-animes [detalhes]="detalhes" [day]="day"  [animes$]="animes$" *ngIf="detalhes"></app-display-animes> 
     </mat-drawer-content>
 </mat-drawer-container>
 

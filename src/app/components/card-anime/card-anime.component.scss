@@ -4,14 +4,14 @@
   width: 240px;
   height: 24rem;
   margin: 16px;
-  background-color: #18191a;
+  background-color: var(--darkMode-display-bg);
   transition: background-color 1s, 0.5s, filter 1.5s, font 0.5s;
-  border-radius: 8px;
+  border-radius: 12px;
   position: relative;
   display: inline-block;
 
   &:hover {
-    box-shadow: 4px 3px 11px 6px rgba(240, 248, 255, 0.5);
+    box-shadow: 4px 3px 11px 6px var(--cardHover-bg);
     transform: translateY(-5px);
     cursor: pointer;
     .animes-image {
@@ -57,7 +57,7 @@
     text-overflow: Ellipsis;
     overflow: hidden;
     text-align: left;
-    color: aliceblue;
+    color: var(--text);
   }
 }
 

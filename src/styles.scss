@@ -1,4 +1,36 @@
 /* You can add global styles to this file, and also import other style files */
+
+:root {
+  --darkMode-toolbar-bg: #242526;
+  --darkMode-sidebar-bg: #18191a;
+  --darkMode-display-bg: #18191a;
+  --darkMode-cardHover-bg: rgba(240, 248, 255, 0.5);
+  --darkMode-text: aliceblue;
+  --dakMode-text-p: aliceblue;
+
+  --lightMode-toolbar-bg: #59d0c0;
+  --lightMode-sidebar-bg: #ececec;
+  --lightMode-display-bg: #ececec;
+  --lightMode-cardHover-bg: rgba(31, 45, 50, 0.5);
+  --lightMode-text: aliceblue;
+  --lightMode-text-p: black;
+
+  --toolbar-bg: var(--darkMode-toolbar-bg);
+  --sidebar-bg: var(--darkMode-sidebar-bg);
+  --display-bg: var(--darkMode-display-bg);
+  --cardHover-bg: var(--darkMode-cardHover-bg);
+  --text: var(--darkMode-text);
+  --text-p: var(--dakMode-text-p);
+}
+
+.mat-slide-toggle.mat-checked .mat-slide-toggle-thumb {
+  background-color: var(--lightMode-toolbar-bg) !important;
+}
+
+.mat-slide-toggle.mat-checked .mat-slide-toggle-bar {
+  background-color: var(--lightMode-toolbar-bg) !important;
+}
+
 html {
   background-color: #2b2118;
 }
@@ -14,39 +46,24 @@ body {
 
 .mat-drawer {
   padding: 20px;
-  background-color: #18191a;
+  background-color: var(--sidebar-bg);
 }
 
 .mat-icon {
   cursor: pointer;
-  color: aliceblue;
+  color: var(--text);
 }
 
 .mat-card {
   padding: 0 !important;
 }
+
 .mat-toolbar {
-  background-color: #242526;
-}
-
-footer {
-  text-align: center;
-  color: aliceblue;
-}
-
-a {
-  color: aliceblue;
-  text-decoration: none;
-}
-
-footer a:hover {
-  color: forestgreen;
-  cursor: pointer;
+  background-color: var(--toolbar-bg);
 }
 
 .mat-drawer-inner-container::-webkit-scrollbar,
 mat-drawer-content::-webkit-scrollbar,
-,
 body::-webkit-scrollbar {
   display: none !important;
 }
