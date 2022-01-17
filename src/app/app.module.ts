@@ -16,6 +16,7 @@ import { ConfigComponent } from './components/config/config.component';
 import { DetailAnimeComponent } from './components/detail-anime/detail-anime.component';
 import { DisplayAnimeComponent } from './components/display-anime/display-anime.component';
 import { HomePage } from './pages/home/home.page';
+import { SortByPipe } from './pipes/sort-by.pipe';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { HomePage } from './pages/home/home.page';
     DisplayAnimeComponent,
     HomePage,
     DetailAnimeComponent,
-    ConfigComponent
+    ConfigComponent,
+    SortByPipe
   ],
   imports: [
     BrowserModule,
@@ -35,7 +37,7 @@ import { HomePage } from './pages/home/home.page';
     MatButtonModule,
     MatIconModule,
     HttpClientModule,
-    MatToolbarModule
+    MatToolbarModule,
   ],
   providers: [],
   bootstrap: [ AppComponent ]

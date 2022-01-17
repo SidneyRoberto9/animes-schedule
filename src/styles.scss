@@ -14,18 +14,19 @@ body {
 
 .mat-drawer {
   padding: 20px;
-  background-color: #7a868f;
+  background-color: #18191a;
 }
 
 .mat-icon {
   cursor: pointer;
+  color: aliceblue;
 }
 
 .mat-card {
   padding: 0 !important;
 }
 .mat-toolbar {
-  background-color: #7a868f;
+  background-color: #242526;
 }
 
 footer {
@@ -43,14 +44,9 @@ footer a:hover {
   cursor: pointer;
 }
 
-.mat-dialog-container {
-  background: #f6f2d2 !important;
-  border: black solid 2px;
-  border-radius: 10px;
-}
 .mat-drawer-inner-container::-webkit-scrollbar,
 mat-drawer-content::-webkit-scrollbar,
-mat-dialog-content::-webkit-scrollbar,
+,
 body::-webkit-scrollbar {
   display: none !important;
 }

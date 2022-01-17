@@ -1,5 +1,5 @@
 <div class="wrapper" *ngIf="detalhes">
-    <div *ngFor="let anime of animes$ | async " >
+    <div *ngFor="let anime of animes | sortBy:'title'" >
       <app-card-anime [day]="day" [animes]="anime"></app-card-anime>
     </div>   
 </div>
