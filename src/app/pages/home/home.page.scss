@@ -28,6 +28,11 @@ a {
   height: 7%;
 }
 
+span:hover {
+  color: gray;
+  cursor: pointer;
+}
+
 .sideconfig {
   width: 250px;
   max-width: 250px;
@@ -43,8 +48,7 @@ a {
   margin-left: 15px;
   width: 250px;
   max-width: 250px;
-  min-height: 3.5rem;
-  max-height: 3.5em;
+  height: 3.5rem;
   cursor: pointer;
 }
 
@@ -65,4 +69,11 @@ a {
 
 .daysOfWeek img:hover {
   filter: grayscale(100%);
+}
+
+@media (orientation: landscape) {
+  .title img {
+    width: 180px;
+    height: 2rem;
+  }
 }

@@ -11,7 +11,7 @@ import { MatSlideToggleChange } from '@angular/material/slide-toggle';
   styleUrls: ['./home.page.scss']
 })
 export class HomePage {
-  day?: number = 100;
+  day?: number = -1;
   detalhes:boolean;
 
   constructor(private animesService: AnimesService) {

@@ -3,7 +3,7 @@
     <button mat-icon-button class="sideBtn" (click)="nav.toggle(); config.close()">
       <mat-icon>menu</mat-icon>
     </button>
-    <h1 class="title" ><img (click)="selectedDay(100)" src="/assets/log.png"></h1>
+    <h1 class="title" ><img (click)="selectedDay(-1)" src="/assets/log.png"></h1>
 
     <span class="spacer"></span>
 
@@ -42,7 +42,8 @@
             </p>
 
             <p>@Copyright 2022 AnimesSchedule. All rights reserved.</p>
-            <p>Files are provided by <a href="https://github.com/SidneyRoberto9" target="_blank">SidneyRoberto9</a> & Ninh0.</p>
+            <p>Files are provided by <a href="https://github.com/SidneyRoberto9" target="_blank">SidneyRoberto9</a> & 
+                <span (click)="selectedDay(100); config.close()">Ninh0.</span></p>
         </div>
     </mat-drawer>
     
