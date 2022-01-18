@@ -13,6 +13,8 @@ export class DisplayAnimeComponent implements OnInit {
   @Input() day?: number;
   @Input() animes$?: Observable<Jinkan[]>;
   @Input() detalhes?: boolean;
+  selectedValue: string;
+  sort:string = "title";
   animes: Jinkan[];
   
   ngOnInit() {

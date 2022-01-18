@@ -5,6 +5,14 @@ h3 {
   font-size: 50px;
 }
 
+mat-label {
+  color: var(--text-p);
+}
+
+mat-form-field:placeholder {
+  color: var(--text-p);
+}
+
 .wrapper {
   display: flex;
   flex-flow: row wrap;

@@ -1,9 +1,18 @@
+<mat-form-field *ngIf="day != 100" appearance="fill">
+  <mat-label>Animes OrderBy</mat-label>
+  <mat-select [(value)]="selectedValue">
+    <mat-option value="title">Nome do Anime</mat-option>
+    <mat-option value="airing_start">Data de Lançamento</mat-option>
+  </mat-select>
+</mat-form-field>
+
+
 <div class="wrapper" *ngIf="detalhes">
-    <div *ngFor="let anime of animes | sortBy:'title'" >
+    <div *ngFor="let anime of animes | sortBy:selectedValue" >
       <app-card-anime [day]="day" [animes]="anime"></app-card-anime>
     </div>   
 </div>
+
 <div class="gif" *ngIf="day == 100"></div>
- 
 
  
