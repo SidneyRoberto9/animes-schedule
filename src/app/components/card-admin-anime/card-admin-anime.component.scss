@@ -1,0 +1,94 @@
+@import url("https://fonts.googleapis.com/css2?family=Varela+Round&display=swap");
+
+.card {
+  width: 240px;
+  height: 24rem;
+  margin: 16px;
+  background-color: var(--darkMode-display-bg);
+  transition: background-color 1s, 0.5s, filter 1.5s, font 0.5s;
+  border-radius: 12px;
+  position: relative;
+  display: inline-block;
+
+  &:hover {
+    box-shadow: 4px 3px 11px 6px var(--cardHover-bg);
+    transform: translateY(-5px);
+    cursor: pointer;
+    .animes-image {
+      transition: filter 1s;
+      filter: grayscale(50%);
+    }
+  }
+
+  .insert {
+    width: 100%;
+    height: 100%;
+  }
+
+  .insert:after {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    content: "";
+    border-radius: 8px;
+    -webkit-box-shadow: inset 0px -43px 50px 5px black;
+    box-shadow: inset 0px -43px 50px 5px black;
+    z-index: 1;
+  }
+
+  .animes-image {
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+    border-radius: 10px;
+  }
+
+  #name {
+    position: absolute;
+    top: 340px;
+    left: 10px;
+    width: 220px;
+    height: 4.5ch;
+    z-index: 2;
+    font-family: "Varela Round", sans-serif;
+    font-size: 13px;
+    text-overflow: Ellipsis;
+    overflow: hidden;
+    text-align: left;
+    color: var(--text);
+  }
+}
+
+@media (max-width: 415px), (max-height: 918px) {
+  .card {
+    width: 180px;
+    margin: 10px;
+    height: 18rem;
+
+    #name {
+      top: 245px;
+      left: 5px;
+      width: 180px;
+      height: 5ch;
+      font-size: 11px;
+    }
+  }
+}
+
+@media (max-width: 360px), (max-height: 742px) {
+  .card {
+    width: 165px;
+    margin: 5px;
+    height: 17rem;
+
+    #name {
+      top: 230px;
+      left: 5px;
+      width: 150px;
+      height: 5ch;
+      font-size: 11px;
+    }
+  }
+}

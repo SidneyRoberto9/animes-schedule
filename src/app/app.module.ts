@@ -16,7 +16,8 @@ import { DetailAnimeComponent } from './components/detail-anime/detail-anime.com
 import { DisplayAnimeComponent } from './components/display-anime/display-anime.component';
 import { HomePage } from './pages/home/home.page';
 import { SortByPipe } from './pipes/sort-by.pipe';
-
+import { AdminPage } from './pages/admin/admin.page';
+import { CardAdminAnimeComponent } from './components/card-admin-anime/card-admin-anime.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,7 +25,9 @@ import { SortByPipe } from './pipes/sort-by.pipe';
     DisplayAnimeComponent,
     HomePage,
     DetailAnimeComponent,
-    SortByPipe
+    SortByPipe,
+    AdminPage,
+    CardAdminAnimeComponent,
   ],
   imports: [
     BrowserModule,

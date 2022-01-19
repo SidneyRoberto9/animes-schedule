@@ -19,5 +19,5 @@ export class DisplayAnimeComponent implements OnInit {
   ngOnInit() {
     this.animes$?.subscribe((anime) => this.animes = anime);  
   }
-
+  
 }
