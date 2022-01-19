@@ -18,6 +18,11 @@ import { HomePage } from './pages/home/home.page';
 import { SortByPipe } from './pipes/sort-by.pipe';
 import { AdminPage } from './pages/admin/admin.page';
 import { CardAdminAnimeComponent } from './components/card-admin-anime/card-admin-anime.component';
+import { DataAdminComponent } from './components/data-admin/data-admin.component';
+import { MatDialogModule, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { FormsModule } from '@angular/forms';
+import { MatInputModule}  from '@angular/material/input';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -28,21 +33,34 @@ import { CardAdminAnimeComponent } from './components/card-admin-anime/card-admi
     SortByPipe,
     AdminPage,
     CardAdminAnimeComponent,
+    DataAdminComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+    HttpClientModule,
+    FormsModule,
     MatCardModule,
     MatSidenavModule,
     MatButtonModule,
     MatIconModule,
-    HttpClientModule,
     MatToolbarModule,
     MatSlideToggleModule,
     MatSelectModule,
+    MatDialogModule,
+    MatInputModule,
   ],
-  providers: [],
+  providers: [
+    {
+      provide: MatDialogRef , 
+      useValue:{} 
+    },
+    { 
+      provide: MAT_DIALOG_DATA, 
+      useValue: {} 
+    }
+],
   bootstrap: [ AppComponent ]
 })
 export class AppModule { }

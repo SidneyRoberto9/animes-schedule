@@ -71,4 +71,5 @@ export class AnimesService {
   getDetails(){
     return this.details.asObservable();
   }
+
 }

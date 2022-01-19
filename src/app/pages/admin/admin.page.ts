@@ -9,6 +9,7 @@ import { AnimesService } from 'src/app/services/animes.service';
   styleUrls: ['./admin.page.scss']
 })
 export class AdminPage {
+  data: boolean;
   constructor(private animesService: AnimesService) {
     this.animesService.getAnimes();
   }
