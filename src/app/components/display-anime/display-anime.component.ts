@@ -15,9 +15,8 @@ export class DisplayAnimeComponent implements OnInit {
   @Input() detalhes?: boolean;
   selectedValue: string = 'title';
   animes: Jinkan[];
-  
+
   ngOnInit() {
-    this.animes$?.subscribe((anime) => this.animes = anime);  
+    this.animes$?.subscribe((anime) => (this.animes = anime));
   }
-  
 }

@@ -1,9 +1,0 @@
-<div *ngIf="animes" >
-    <mat-card class="card" 
-    *ngIf=" !animes.r18 && !animes.kids" (click)="openChange()">
-      <div class="insert">
-        <img class="animes-image" src="{{ animes?.image_url }}" alt="anime">
-      </div>
-      <p id="name">{{ animes?.title }}</p>
-    </mat-card>
-</div>
