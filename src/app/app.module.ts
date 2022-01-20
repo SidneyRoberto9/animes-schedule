@@ -19,6 +19,10 @@ import { DetailAnimeComponent } from './components/detail-anime/detail-anime.com
 import { DisplayAnimeComponent } from './components/display-anime/display-anime.component';
 import { HomePage } from './pages/home/home.page';
 import { SortByPipe } from './pipes/sort-by.pipe';
+import { SearchPage } from './pages/search/search.page';
+import { CardSearchAnimeComponent } from './components/card-search-anime/card-search-anime.component';
+import { DetailsSearchAnimeComponent } from './components/details-search-anime/details-search-anime.component';
+import { DisplaySearchAnimeComponent } from './components/display-search-anime/display-search-anime.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +32,10 @@ import { SortByPipe } from './pipes/sort-by.pipe';
     HomePage,
     DetailAnimeComponent,
     SortByPipe,
+    SearchPage,
+    CardSearchAnimeComponent,
+    DetailsSearchAnimeComponent,
+    DisplaySearchAnimeComponent,
   ],
   imports: [
     BrowserModule,

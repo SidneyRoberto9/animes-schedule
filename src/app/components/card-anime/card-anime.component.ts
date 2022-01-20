@@ -6,19 +6,16 @@ import { Component, Input } from '@angular/core';
 @Component({
   selector: 'app-card-anime',
   templateUrl: './card-anime.component.html',
-  styleUrls: ['./card-anime.component.scss']
+  styleUrls: ['./card-anime.component.scss'],
 })
-export class CardAnimeComponent{
+export class CardAnimeComponent {
   @Input() day?: number;
   @Input() animes: Jinkan;
-
-
+  @Input() filterValue: string = 'public';
   constructor(public animesService: AnimesService) {}
 
   openDetails(): void {
     this.animesService.setActualAnime(this.animes);
     this.animesService.details.next(false);
   }
-
-  
 }

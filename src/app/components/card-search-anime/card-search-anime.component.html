@@ -1,0 +1,8 @@
+<div *ngIf="anime" >
+    <mat-card class="card"(click)="openDetails()">
+      <div class="insert">
+        <img class="animes-image" src="{{ anime.images.jpg.image_url }}" alt="anime">
+      </div>
+      <p id="name">{{ anime?.title }}</p>
+    </mat-card>
+</div>

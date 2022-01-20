@@ -14,6 +14,7 @@ export class DisplayAnimeComponent implements OnInit {
   @Input() animes$?: Observable<Jinkan[]>;
   @Input() detalhes?: boolean;
   selectedValue: string = 'title';
+  filterValue: string = 'public';
   animes: Jinkan[];
 
   ngOnInit() {

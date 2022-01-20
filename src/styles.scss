@@ -82,6 +82,10 @@ body {
   background-color: var(--text-p);
 }
 
+.mat-focused .mat-form-field-label {
+  color: gray !important;
+}
+
 .mat-drawer-inner-container::-webkit-scrollbar,
 mat-drawer-content::-webkit-scrollbar,
 body::-webkit-scrollbar {

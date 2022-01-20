@@ -5,15 +5,25 @@ import { environment } from 'src/environments/environment';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
-import { Jinkan, RootObject } from '../model/anime.model';
+import {
+  DatumSearch,
+  Jinkan,
+  RootObject,
+  RootObjectSearch,
+} from '../model/anime.model';
 
 @Injectable({
   providedIn: 'root',
 })
 export class AnimesService {
   details = new BehaviorSubject<boolean>(true);
+  detailsSearch = new BehaviorSubject<boolean>(true);
   Actualanime = new BehaviorSubject<Jinkan>({} as Jinkan);
+  ActualanimeSearch = new BehaviorSubject<DatumSearch>({} as DatumSearch);
   animes$: Observable<Jinkan[]>;
+  datumSearch$: Observable<DatumSearch[]>;
+  BASE_SEARCH_URL: string =
+    'https://api.jikan.moe/v4/anime?q=${busca}&order_by=rank';
   private readonly BASE_URL = 'https://api.jikan.moe/v3/season';
 
   constructor(private http: HttpClient) {
@@ -86,11 +96,117 @@ export class AnimesService {
     return this.Actualanime.asObservable();
   }
 
+  setActualAnimeSearch(anime: DatumSearch) {
+    this.ActualanimeSearch.next(anime);
+  }
+
+  getActualAnimeSearch() {
+    return this.ActualanimeSearch.asObservable();
+  }
+
   setDetails(details: boolean) {
     this.details.next(details);
   }
 
   getDetails() {
     return this.details.asObservable();
+  }
+
+  setDetailsSearch(details: boolean) {
+    this.detailsSearch.next(details);
+  }
+
+  getDetailsSearch() {
+    return this.detailsSearch.asObservable();
+  }
+
+  search(busca: string): void {
+    this.BASE_SEARCH_URL = `https://api.jikan.moe/v4/anime?q=${busca}&order_by=popularity&sfw=true`;
+    this.datumSearch$ = this.http
+      .get<RootObjectSearch>(this.BASE_SEARCH_URL)
+      .pipe(
+        map((content) => {
+          const datum = content.data;
+          const datumAnimes: DatumSearch[] = datum.map(
+            ({
+              mal_id,
+              url,
+              images,
+              trailer,
+              title,
+              title_english,
+              title_japanese,
+              title_synonyms,
+              type,
+              source,
+              episodes,
+              status,
+              airing,
+              aired,
+              duration,
+              rating,
+              score,
+              scored_by,
+              rank,
+              popularity,
+              members,
+              favorites,
+              synopsis,
+              background,
+              season,
+              year,
+              broadcast,
+              producers,
+              licensors,
+              studios,
+              genres,
+              explicit_genres,
+              themes,
+              demographics,
+            }) => {
+              const animeGenres = [
+                genres,
+                themes,
+                demographics,
+                explicit_genres,
+              ];
+              return {
+                mal_id,
+                url,
+                images,
+                trailer,
+                title,
+                title_english,
+                title_japanese,
+                title_synonyms,
+                type,
+                source,
+                episodes,
+                status,
+                airing,
+                aired,
+                duration,
+                rating,
+                score,
+                scored_by,
+                rank,
+                popularity,
+                members,
+                favorites,
+                synopsis,
+                background,
+                season,
+                year,
+                broadcast,
+                producers,
+                licensors,
+                studios,
+                genres: animeGenres.flatMap((genre) => genre),
+              };
+            }
+          );
+          return datumAnimes;
+        })
+      );
   }
 }

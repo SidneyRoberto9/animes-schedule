@@ -1,11 +1,13 @@
-<mat-form-field *ngIf="day == -1" appearance="fill">
-  <mat-label>Animes OrderBy</mat-label>
-  <mat-select [(value)]="selectedValue">
-    <mat-option value="title">Nome do Anime</mat-option>
-    <mat-option value="airing_start">Data de Lançamento</mat-option>
-  </mat-select>
-</mat-form-field>
-
+<div class="filters" *ngIf="day == -1">
+  <mat-form-field appearance="fill">
+    <mat-label>Animes OrderBy</mat-label>
+    <mat-select [(value)]="selectedValue">
+      <mat-option value="title">Nome do Anime</mat-option>
+      <mat-option value="score">Nota do MyAnimeList</mat-option>
+      <mat-option value="mal_id">ID MyAnimeList</mat-option>
+    </mat-select>
+  </mat-form-field>
+</div>
 
 <div class="wrapper" *ngIf="detalhes" >
     <div *ngFor="let anime of animes | sortBy:selectedValue" >
