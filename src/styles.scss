@@ -91,3 +91,7 @@ mat-drawer-content::-webkit-scrollbar,
 body::-webkit-scrollbar {
   display: none !important;
 }
+
+img {
+  object-fit: cover;
+}

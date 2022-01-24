@@ -1,6 +1,14 @@
+<header>
+  <mat-toolbar class="toolbar">
+    <h1 class="title">
+      <img (click)="inicio()" src="/assets/log.png" />
+    </h1>
+
+    <span class="spacer"></span>
+  </mat-toolbar>
+</header>
+
 <body>
-    <app-display-search-anime *ngIf="detalhes"></app-display-search-anime>
-    <app-details-search-anime *ngIf="!detalhes"></app-details-search-anime>
+  <app-display-search-anime *ngIf="detalhes"></app-display-search-anime>
+  <app-details-search-anime *ngIf="!detalhes"></app-details-search-anime>
 </body>
-
-

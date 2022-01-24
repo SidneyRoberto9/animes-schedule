@@ -15,6 +15,7 @@
     transform: translateY(-5px);
     cursor: pointer;
     .animes-image {
+      object-fit: cover;
       transition: filter 1s;
       filter: grayscale(50%);
     }
@@ -43,6 +44,7 @@
     height: 100%;
     margin: 0 auto;
     border-radius: 10px;
+    object-fit: cover;
   }
 
   #name {

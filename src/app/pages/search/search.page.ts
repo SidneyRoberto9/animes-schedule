@@ -12,9 +12,13 @@ import { AnimesService } from 'src/app/services/animes.service';
 export class SearchPage {
   detalhes: boolean;
 
-  constructor(private animesService: AnimesService) {
+  constructor(private animesService: AnimesService, private router: Router) {
     this.animesService
       .getDetailsSearch()
       .subscribe((detalhes) => (this.detalhes = detalhes));
+  }
+
+  inicio() {
+    this.router.navigate(['/home']);
   }
 }
