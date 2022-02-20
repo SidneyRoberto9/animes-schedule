@@ -41,7 +41,6 @@ export class AnimesService {
             title,
             image_url,
             synopsis,
-            airing_start,
             genres,
             producers,
             score,

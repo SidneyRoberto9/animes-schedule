@@ -15,7 +15,7 @@ export class HomePage {
   detalhes: boolean;
 
   constructor(private animesService: AnimesService) {
-    this.animesService.getAnimes();
+    this.animesService.getData(); // set to getAnimes para pegar do back4apps
     this.animesService
       .getDetails()
       .subscribe((detalhes) => (this.detalhes = detalhes));
