@@ -11,6 +11,7 @@ import { AnimesService } from 'src/app/services/animes.service';
 })
 export class SearchPage {
   detalhes: boolean;
+  busca: string = '';
 
   constructor(private animesService: AnimesService, private router: Router) {
     this.animesService

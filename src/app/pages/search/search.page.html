@@ -1,14 +1,32 @@
 <header>
   <mat-toolbar class="toolbar">
-    <h1 class="title">
-      <img (click)="inicio()" src="/assets/log.png" />
-    </h1>
+    <button mat-icon-button class="sideBtn">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <h1 class="title"><img (click)="inicio()" src="/assets/log.png" /></h1>
 
     <span class="spacer"></span>
+
+    <div class="busca">
+      <input
+        type="text"
+        matInput
+        placeholder="Search"
+        spellcheck="false"
+        [(ngModel)]="busca"
+      />
+    </div>
+
+    <button mat-icon-button>
+      <mat-icon>settings</mat-icon>
+    </button>
   </mat-toolbar>
 </header>
 
 <body>
-  <app-display-search-anime *ngIf="detalhes"></app-display-search-anime>
+  <app-display-search-anime
+    [busca]="busca"
+    *ngIf="detalhes"
+  ></app-display-search-anime>
   <app-details-search-anime *ngIf="!detalhes"></app-details-search-anime>
 </body>

@@ -1,18 +1,4 @@
 <div class="content">
-  <div class="box">
-    <div>
-      <input
-        type="text"
-        class="input"
-        minlength="3"
-        [(ngModel)]="busca"
-        (change)="search(busca)"
-        placeholder="Search Anime..."
-      />
-      <input type="submit" (click)="search(busca)" value="Search" />
-    </div>
-  </div>
-
   <div class="wrapper">
     <div *ngFor="let anime of animes">
       <app-card-search-anime [anime]="anime"></app-card-search-anime>
