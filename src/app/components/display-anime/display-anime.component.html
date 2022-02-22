@@ -9,12 +9,10 @@
   </mat-form-field>
 </div>
 
-<div class="wrapper" *ngIf="detalhes" >
-    <div *ngFor="let anime of animes | sortBy:selectedValue" >
-      <app-card-anime [day]="day" [animes]="anime"></app-card-anime>
-    </div>   
+<div class="wrapper" *ngIf="detalhes">
+  <div *ngFor="let anime of animes | sortBy: selectedValue">
+    <app-card-anime [day]="day" [animes]="anime"></app-card-anime>
+  </div>
 </div>
 
 <div class="gif" *ngIf="day == 100"></div>
-
- 
