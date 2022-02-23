@@ -2,23 +2,31 @@ import { Observable } from 'rxjs';
 import { Jinkan } from 'src/app/model/anime.model';
 import { AnimesService } from 'src/app/services/animes.service';
 
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { MatSlideToggleChange } from '@angular/material/slide-toggle';
+import { GlobalVariablesService } from 'src/app/services/global-variables.service';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.page.html',
   styleUrls: ['./home.page.scss'],
 })
-export class HomePage {
-  day?: number = -1;
+export class HomePage implements OnInit {
+  day: number;
   detalhes: boolean;
 
-  constructor(private animesService: AnimesService) {
-    this.animesService.getData(); // set to getAnimes para pegar do back4apps
+  constructor(
+    private animesService: AnimesService,
+    private global: GlobalVariablesService
+  ) {
+    this.animesService.getAnimes(); // set to getAnimes para pegar do back4apps
     this.animesService
       .getDetails()
       .subscribe((detalhes) => (this.detalhes = detalhes));
+  }
+
+  ngOnInit() {
+    this.global.getDayWeek$.subscribe((day) => (this.day = day));
   }
 
   get animes$(): Observable<Jinkan[]> {

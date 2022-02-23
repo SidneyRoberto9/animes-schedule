@@ -17,35 +17,7 @@
 
 <mat-drawer-container class="container">
   <mat-drawer #nav mode="over" class="sidenav" position="start">
-    <ul class="daysOfWeek">
-      <li>
-        <a href="\search"><img src="/assets/img/busca.png" /></a>
-      </li>
-      <li (click)="selectedDay(-1); nav.close()">
-        <img src="/assets/img/all.png" />
-      </li>
-      <li (click)="selectedDay(0); nav.close()">
-        <img src="/assets/img/dom.png" />
-      </li>
-      <li (click)="selectedDay(1); nav.close()">
-        <img src="/assets/img/seg.png" />
-      </li>
-      <li (click)="selectedDay(2); nav.close()">
-        <img src="/assets/img/ter.png" />
-      </li>
-      <li (click)="selectedDay(3); nav.close()">
-        <img src="/assets/img/qua.png" />
-      </li>
-      <li (click)="selectedDay(4); nav.close()">
-        <img src="/assets/img/qui.png" />
-      </li>
-      <li (click)="selectedDay(5); nav.close()">
-        <img src="/assets/img/sex.png" />
-      </li>
-      <li (click)="selectedDay(6); nav.close()">
-        <img src="/assets/img/sab.png" />
-      </li>
-    </ul>
+    <app-nav-bar></app-nav-bar>
   </mat-drawer>
 
   <mat-drawer #config mode="over" class="sideconfig" position="end">

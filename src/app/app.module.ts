@@ -23,6 +23,7 @@ import { SearchPage } from './pages/search/search.page';
 import { CardSearchAnimeComponent } from './components/card-search-anime/card-search-anime.component';
 import { DetailsSearchAnimeComponent } from './components/details-search-anime/details-search-anime.component';
 import { DisplaySearchAnimeComponent } from './components/display-search-anime/display-search-anime.component';
+import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 
 @NgModule({
   declarations: [
@@ -36,6 +37,7 @@ import { DisplaySearchAnimeComponent } from './components/display-search-anime/d
     CardSearchAnimeComponent,
     DetailsSearchAnimeComponent,
     DisplaySearchAnimeComponent,
+    NavBarComponent,
   ],
   imports: [
     BrowserModule,

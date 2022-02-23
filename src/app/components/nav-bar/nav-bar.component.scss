@@ -1,0 +1,18 @@
+.daysOfWeek {
+  list-style: none;
+  padding-top: 0px;
+  padding-left: 0px;
+}
+
+.daysOfWeek img {
+  width: 220px;
+  cursor: pointer;
+}
+
+.spacer {
+  flex: 1 1 auto;
+}
+
+.daysOfWeek img:hover {
+  filter: grayscale(100%);
+}
