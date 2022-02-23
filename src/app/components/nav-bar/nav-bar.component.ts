@@ -8,11 +8,30 @@ import { GlobalVariablesService } from 'src/app/services/global-variables.servic
 })
 export class NavBarComponent implements OnInit {
   day: number;
+  selectedBtn: string;
+  buttons = [
+    'Todos',
+    'Domingo',
+    'Segunda',
+    'Terça',
+    'Quarta',
+    'Quinta',
+    'Sexta',
+    'Sábado',
+  ];
 
   constructor(private global: GlobalVariablesService) {}
 
   ngOnInit() {
     this.global.getDayWeek$.subscribe((day) => (this.day = day));
+  }
+
+  selectBtn(btn: string) {
+    this.selectedBtn = btn;
+  }
+
+  reload() {
+    window.location.reload();
   }
 
   selectedDay(day: number) {

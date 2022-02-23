@@ -1,52 +1,7 @@
-<mat-toolbar class="toolbar">
-  <button
-    mat-icon-button
-    class="sideBtn"
-    (click)="nav.toggle(); config.close()"
-  >
-    <mat-icon>menu</mat-icon>
-  </button>
-  <h1 class="title"><img (click)="selectedDay(-1)" src="/assets/log.png" /></h1>
+<div class="display">
+  <app-nav-bar></app-nav-bar>
 
-  <span class="spacer"></span>
-
-  <button mat-icon-button (click)="config.toggle(); nav.close()">
-    <mat-icon>settings</mat-icon>
-  </button>
-</mat-toolbar>
-
-<mat-drawer-container class="container">
-  <mat-drawer #nav mode="over" class="sidenav" position="start">
-    <app-nav-bar></app-nav-bar>
-  </mat-drawer>
-
-  <mat-drawer #config mode="over" class="sideconfig" position="end">
-    <ul class="config">
-      <li>
-        <mat-slide-toggle (change)="onChange($event)"
-          >Light mode</mat-slide-toggle
-        >
-      </li>
-    </ul>
-    <div class="footer">
-      <p style="font-size: 24px">Contact</p>
-      <p>
-        <a href="mailto:sidneyrpsilva@gmail.com"> - Email</a><br />
-        <a href="tel:+5583986635812"> - Telefone</a>
-      </p>
-
-      <p>@Copyright 2022 AnimesSchedule. All rights reserved.</p>
-      <p>
-        Files are provided by
-        <a href="https://github.com/SidneyRoberto9" target="_blank"
-          >SidneyRoberto9</a
-        >
-        & <span (click)="selectedDay(100); config.close()">Ninh0.</span>
-      </p>
-    </div>
-  </mat-drawer>
-
-  <mat-drawer-content>
+  <div class="content">
     <app-detail-anime *ngIf="!detalhes"></app-detail-anime>
     <app-display-animes
       [detalhes]="detalhes"
@@ -54,5 +9,5 @@
       [animes$]="animes$"
       *ngIf="detalhes"
     ></app-display-animes>
-  </mat-drawer-content>
-</mat-drawer-container>
+  </div>
+</div>
