@@ -1,29 +1,29 @@
 <div class="display">
-    <div class="init">
-        <img src="{{ data.images.jpg.image_url }}" alt="">      
-        <mat-icon (click)="hideDetalhes()">keyboard_return</mat-icon>
-    </div>
+  <div class="init">
+    <img src="{{ data.images.jpg.image_url }}" alt="" />
+    <mat-icon (click)="hideDetalhes()">keyboard_return</mat-icon>
+  </div>
 
-    <div class="title">
-        <h1> {{ data?.title }}</h1> 
-        <h3> {{ data.title_english }} </h3>
-        <h3> {{ data.title_japanese }}</h3>
-        <p><b>Tipo:</b>  {{ data.type }}</p>
-        <p><b>Episódios:</b>  {{ data.episodes }}</p>
-        <p><b>Status:</b>  {{ data.status }}</p>
-        <p><b>Duração:</b>  {{ data.duration }}</p>
-        <p><b>Classificação:</b>  {{ data.rating }}</p>
-        <p><b>Rank:</b>  {{ data.rank }}</p>
-        <p><b>Popularidade:</b>  {{ data.popularity }}</p>
-        <p><b>Membros:</b>  {{ data.members }}</p>
-        <p><b>Ano:</b>  {{ data.year }}</p>
-        <p><b>Temporada:</b>  {{ data.season }}</p>
-        <p><b>Favoritos:</b>  {{ data.favorites }}</p>
-        <p><b>MyAnimeList - Score:</b>  {{ data.score }}</p>
-        <p><b>Gênero(s):</b><span *ngFor="let gn of data?.genres"> {{ gn.name }}, </span></p>
-        <p><b>Estúdio(s):</b> <span *ngFor="let std of data?.studios"> {{ std.name }}, </span></p>
-        <p><b>Produtor(es):</b><span *ngFor="let prod of data?.producers"> {{ prod.name }}, </span></p>
-        <p><b>Licenças:</b> <span *ngFor="let lin of data?.licensors"> {{ lin.name }}, </span></p>
-        <p><b>Sinopse:</b> {{ data.synopsis }}</p>
-    </div>
-</div> 
+  <div class="title">
+    <h1>{{ data?.title }}</h1>
+    <h3>{{ data.title_english }}</h3>
+    <h3>{{ data.title_japanese }}</h3>
+    <p><b>Tipo:</b> {{ data.type }}</p>
+    <p><b>Episódios:</b> {{ data.episodes }}</p>
+    <p><b>Status:</b> {{ data.status }}</p>
+    <p><b>Duração:</b> {{ data.duration }}</p>
+    <p><b>Classificação:</b> {{ data.rating }}</p>
+    <p><b>Rank:</b> {{ data.rank }}</p>
+    <p><b>Popularidade:</b> {{ data.popularity }}</p>
+    <p><b>Membros:</b> {{ data.members }}</p>
+    <p><b>Ano:</b> {{ data.year }}</p>
+    <p><b>Temporada:</b> {{ data.season }}</p>
+    <p><b>Favoritos:</b> {{ data.favorites }}</p>
+    <p><b>MyAnimeList - Score:</b> {{ data.score }}</p>
+    <p><b>Gênero(s):</b>{{ genre }}</p>
+    <p><b>Estúdio(s):</b>{{ studios }}</p>
+    <p><b>Produtor(es):</b> {{ producers }}</p>
+    <p><b>Licenças:</b>{{ licensors }}</p>
+    <p><b>Sinopse:</b> {{ data.synopsis }}</p>
+  </div>
+</div>

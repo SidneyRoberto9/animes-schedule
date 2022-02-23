@@ -20,7 +20,7 @@ export class HomePage implements OnInit {
     private global: GlobalVariablesService
   ) {
     this.animesService.getAnimes(); // set to getAnimes para pegar do back4apps
-    this.animesService
+    this.global
       .getDetails()
       .subscribe((detalhes) => (this.detalhes = detalhes));
   }
@@ -35,7 +35,7 @@ export class HomePage implements OnInit {
 
   selectedDay(day: number): void {
     this.day = day;
-    this.animesService.setDetails(true);
+    this.global.setDetails(true);
   }
 
   onChange($event: MatSlideToggleChange) {

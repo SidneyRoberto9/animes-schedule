@@ -16,12 +16,9 @@ import {
   providedIn: 'root',
 })
 export class AnimesService {
-  details = new BehaviorSubject<boolean>(true);
-  detailsSearch = new BehaviorSubject<boolean>(true);
-  Actualanime = new BehaviorSubject<Jinkan>({} as Jinkan);
-  ActualanimeSearch = new BehaviorSubject<DatumSearch>({} as DatumSearch);
   animes$: Observable<Jinkan[]>;
   datumSearch$: Observable<DatumSearch[]>;
+
   BASE_SEARCH_URL: string =
     'https://api.jikan.moe/v4/anime?q=${busca}&order_by=rank';
   private readonly BASE_URL = 'https://api.jikan.moe/v3/season';
@@ -85,38 +82,6 @@ export class AnimesService {
       });
       return animeList;
     });
-  }
-
-  setActualAnime(anime: Jinkan) {
-    this.Actualanime.next(anime);
-  }
-
-  getActualAnime() {
-    return this.Actualanime.asObservable();
-  }
-
-  setActualAnimeSearch(anime: DatumSearch) {
-    this.ActualanimeSearch.next(anime);
-  }
-
-  getActualAnimeSearch() {
-    return this.ActualanimeSearch.asObservable();
-  }
-
-  setDetails(details: boolean) {
-    this.details.next(details);
-  }
-
-  getDetails() {
-    return this.details.asObservable();
-  }
-
-  setDetailsSearch(details: boolean) {
-    this.detailsSearch.next(details);
-  }
-
-  getDetailsSearch() {
-    return this.detailsSearch.asObservable();
   }
 
   search(busca: string): void {

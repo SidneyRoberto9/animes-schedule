@@ -1,6 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { DatumSearch } from 'src/app/model/anime.model';
 import { AnimesService } from 'src/app/services/animes.service';
+import { GlobalVariablesService } from 'src/app/services/global-variables.service';
 
 @Component({
   selector: 'app-card-search-anime',
@@ -11,15 +12,14 @@ export class CardSearchAnimeComponent {
   @Input() anime: DatumSearch;
   detalhes: boolean;
 
-  constructor(public animesService: AnimesService) {
-    this.animesService.getDetailsSearch().subscribe((detalhes) => {
+  constructor(private global: GlobalVariablesService) {
+    this.global.getDetailsSearch().subscribe((detalhes) => {
       this.detalhes = detalhes;
     });
   }
 
   openDetails(): void {
-    this.animesService.setActualAnimeSearch(this.anime);
-    this.animesService.setDetailsSearch(!this.detalhes);
-    console.log(this.detalhes);
+    this.global.setActualAnimeSearch(this.anime);
+    this.global.setDetailsSearch(!this.detalhes);
   }
 }

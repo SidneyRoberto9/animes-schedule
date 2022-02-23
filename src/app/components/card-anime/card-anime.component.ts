@@ -2,6 +2,7 @@ import { Jinkan } from 'src/app/model/anime.model';
 import { AnimesService } from 'src/app/services/animes.service';
 
 import { Component, Input } from '@angular/core';
+import { GlobalVariablesService } from 'src/app/services/global-variables.service';
 
 @Component({
   selector: 'app-card-anime',
@@ -12,10 +13,10 @@ export class CardAnimeComponent {
   @Input() day?: number;
   @Input() animes: Jinkan;
   @Input() filterValue: string = 'public';
-  constructor(public animesService: AnimesService) {}
+  constructor(private global: GlobalVariablesService) {}
 
   openDetails(): void {
-    this.animesService.setActualAnime(this.animes);
-    this.animesService.details.next(false);
+    this.global.setActualAnime(this.animes);
+    this.global.details.next(false);
   }
 }

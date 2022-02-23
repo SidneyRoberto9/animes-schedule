@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { DatumSearch } from 'src/app/model/anime.model';
 import { AnimesService } from 'src/app/services/animes.service';
+import { GlobalVariablesService } from 'src/app/services/global-variables.service';
 
 @Component({
   selector: 'app-display-search-anime',
@@ -14,8 +15,12 @@ export class DisplaySearchAnimeComponent {
   @Input() busca: string = '';
   animes: DatumSearch[];
 
-  constructor(private animesService: AnimesService, private router: Router) {
-    this.animesService
+  constructor(
+    private global: GlobalVariablesService,
+    private animesService: AnimesService,
+    private router: Router
+  ) {
+    this.global
       .getDetailsSearch()
       .subscribe((detalhes) => (this.detalhes = detalhes));
   }

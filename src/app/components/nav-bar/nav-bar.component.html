@@ -9,6 +9,7 @@
     <li *ngFor="let btn of buttons; let i = index">
       <button
         [ngClass]="{ ativo: selectedBtn == btn }"
+        [ngClass]="{ ativo: weekDay == i - 1 }"
         (click)="selectedDay(i - 1); selectBtn(btn)"
       >
         {{ btn }}
