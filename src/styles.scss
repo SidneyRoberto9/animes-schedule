@@ -15,6 +15,16 @@
   --lightMode-text: aliceblue;
   --lightMode-text-p: black;
 
+  --background: #1f2229;
+  --background2: #2e303c;
+  --background-button: #373945;
+  --background-button2: #515466;
+  --background-button3: #5d5f6e;
+  --yellow: #fae800;
+  --gray: #bec2c6;
+  --white: #fbfbfb;
+  --red: #d20000;
+
   --toolbar-bg: var(--darkMode-toolbar-bg);
   --sidebar-bg: var(--darkMode-sidebar-bg);
   --display-bg: var(--darkMode-display-bg);
@@ -37,7 +47,7 @@ html {
 
 html,
 body {
-  background-color: gray;
+  background-color: var(--background);
   height: 100%;
 }
 body {
