@@ -55,11 +55,6 @@ body {
   font-family: Roboto, "Helvetica Neue", sans-serif;
 }
 
-.mat-drawer {
-  padding: 20px;
-  background-color: var(--sidebar-bg);
-}
-
 .mat-icon {
   cursor: pointer;
   color: var(--text);
@@ -95,12 +90,6 @@ body {
 
 .mat-focused .mat-form-field-label {
   color: gray !important;
-}
-
-.mat-drawer-inner-container::-webkit-scrollbar,
-mat-drawer-content::-webkit-scrollbar,
-body::-webkit-scrollbar {
-  display: none !important;
 }
 
 mat-progress-spinner {

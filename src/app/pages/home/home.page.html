@@ -1,10 +1,21 @@
 <div class="display">
-  <app-nav-bar></app-nav-bar>
+  <div [style.display]="showNav ? 'inline':'none' ">
+    <app-nav-bar></app-nav-bar>
+  </div>
 
-  <div class="content">
+  <div class="content" [style.padding-left]="showNav ? '284px': '0'">
     <app-display-animes
       [day]="day"
       [animes$]="animesHeroku$"
     ></app-display-animes>
   </div>
+
+  <button
+    class="show"
+    [style.left]="showNav ? '264px': '0px'"
+    [ngClass]="{'clicked': showNav}"
+    (click)="showNav = !showNav"
+  >
+    &#8594;
+  </button>
 </div>

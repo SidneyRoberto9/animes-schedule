@@ -62,6 +62,21 @@
   }
 }
 
+@media (min-width: 1366px) {
+  .card {
+    width: 230px;
+    height: 23rem;
+    margin: 16px;
+    #name {
+      top: 325px;
+      left: 5px;
+      width: 180px;
+      height: 5ch;
+      font-size: 13px;
+    }
+  }
+}
+
 @media (max-width: 415px), (max-height: 918px) {
   .card {
     width: 180px;
