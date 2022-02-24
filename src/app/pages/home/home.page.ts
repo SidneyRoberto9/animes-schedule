@@ -3,6 +3,7 @@ import { heroResult } from 'src/app/model/heroku.model';
 import { AnimesService } from 'src/app/services/animes.service';
 import { GlobalVariablesService } from 'src/app/services/global-variables.service';
 import { Component, OnInit } from '@angular/core';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 @Component({
   selector: 'app-home',
   templateUrl: './home.page.html',
