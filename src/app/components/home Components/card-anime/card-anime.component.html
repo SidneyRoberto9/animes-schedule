@@ -1,0 +1,13 @@
+<div *ngIf="animes">
+  <mat-card
+    class="card"
+    *ngIf="(animes.weekday == day && animes.airing == true) || day == 'todos'"
+  >
+    <a href="{{ animes.external_links[0].url }}" target="_blank">
+      <div class="insert">
+        <img class="animes-image" src="{{ animes?.image_url }}" alt="anime" />
+      </div>
+      <p id="name">{{ animes?.title }}</p>
+    </a>
+  </mat-card>
+</div>

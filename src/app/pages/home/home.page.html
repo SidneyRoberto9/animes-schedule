@@ -2,12 +2,9 @@
   <app-nav-bar></app-nav-bar>
 
   <div class="content">
-    <app-detail-anime *ngIf="!detalhes"></app-detail-anime>
     <app-display-animes
-      [detalhes]="detalhes"
       [day]="day"
-      [animes$]="animes$"
-      *ngIf="detalhes"
+      [animes$]="animesHeroku$"
     ></app-display-animes>
   </div>
 </div>

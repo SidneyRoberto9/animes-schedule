@@ -1,9 +1,9 @@
 import { Observable } from 'rxjs';
 import { DatumSearch, Genre, Jinkan } from 'src/app/model/anime.model';
 import { AnimesService } from 'src/app/services/animes.service';
+import { GlobalVariablesService } from 'src/app/services/global-variables.service';
 
 import { Component, Input, OnInit } from '@angular/core';
-import { GlobalVariablesService } from 'src/app/services/global-variables.service';
 
 @Component({
   selector: 'app-details-search-anime',

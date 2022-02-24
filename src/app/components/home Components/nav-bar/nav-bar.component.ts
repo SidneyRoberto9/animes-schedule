@@ -1,7 +1,7 @@
+import { GlobalVariablesService } from 'src/app/services/global-variables.service';
 import { Component, OnInit } from '@angular/core';
 import { _MatSlideToggleRequiredValidatorModule } from '@angular/material/slide-toggle';
-import { GlobalVariablesService } from 'src/app/services/global-variables.service';
-import { DiagnosticCategory } from 'typescript';
+import { buttons, dia } from './data';
 
 @Component({
   selector: 'app-nav-bar',
@@ -9,20 +9,11 @@ import { DiagnosticCategory } from 'typescript';
   styleUrls: ['./nav-bar.component.scss'],
 })
 export class NavBarComponent implements OnInit {
-  day: number;
+  day: string;
   actualWeekDay: number;
   weekDay: number;
   selectedBtn: string;
-  buttons = [
-    'Todos',
-    'Domingo',
-    'Segunda',
-    'Terça',
-    'Quarta',
-    'Quinta',
-    'Sexta',
-    'Sábado',
-  ];
+  buttons = buttons;
 
   constructor(private global: GlobalVariablesService) {}
 
@@ -30,7 +21,7 @@ export class NavBarComponent implements OnInit {
     this.global.getDayWeek$.subscribe((day) => (this.day = day));
     this.actualWeekDay = new Date().getDay();
     this.weekDay = this.actualWeekDay;
-    this.global.setWeekDay(this.actualWeekDay);
+    this.global.setWeekDay(dia[this.actualWeekDay].dia);
   }
 
   selectBtn(btn: string) {
@@ -42,7 +33,9 @@ export class NavBarComponent implements OnInit {
     window.location.reload();
   }
 
-  selectedDay(day: number) {
-    this.global.setWeekDay(day);
+  selectedDay(day: string) {
+    day = day.replace('ç', 'c');
+    day = day.replace('á', 'a');
+    this.global.setWeekDay(day.toLocaleLowerCase());
   }
 }

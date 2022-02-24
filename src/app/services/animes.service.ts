@@ -1,87 +1,51 @@
-import Parse from 'parse';
-import { BehaviorSubject, defer, map, Observable } from 'rxjs';
-import { environment } from 'src/environments/environment';
-
+import { map, Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-
-import {
-  DatumSearch,
-  Jinkan,
-  RootObject,
-  RootObjectSearch,
-} from '../model/anime.model';
+import { DatumSearch, RootObjectSearch } from '../model/anime.model';
+import { heroModel, heroResult } from '../model/heroku.model';
 
 @Injectable({
   providedIn: 'root',
 })
 export class AnimesService {
-  animes$: Observable<Jinkan[]>;
   datumSearch$: Observable<DatumSearch[]>;
+  animesHeroku$: Observable<heroResult[]>;
 
-  BASE_SEARCH_URL: string =
-    'https://api.jikan.moe/v4/anime?q=${busca}&order_by=rank';
-  private readonly BASE_URL = 'https://api.jikan.moe/v3/season';
+  BASE_URL_HEROKU = 'https://animes-schedule-api.herokuapp.com/animes';
+  BASE_SEARCH_URL = 'https://api.jikan.moe/v4/anime?q=${busca}&order_by=rank';
+  BetterAnimeLink = 'https://betteranime.net/anime/legendado/';
 
-  constructor(private http: HttpClient) {
-    Parse.serverURL = 'https://parseapi.back4app.com';
-    Parse.initialize(environment.APPLICATION_ID, environment.JS_KEY);
+  constructor(private http: HttpClient) {}
+
+  formatLink(link: string) {
+    link = link.toLowerCase();
+    link = link.replace(' (tv)', '');
+    link = link.replace(/:/g, '');
+    link = link.replace(/ /g, '-');
+
+    return link;
   }
 
-  getData(): void {
-    this.animes$ = this.http.get<RootObject>(this.BASE_URL).pipe(
+  getAnimesHeroku(): void {
+    this.animesHeroku$ = this.http.get<heroModel[]>(this.BASE_URL_HEROKU).pipe(
       map((data) => {
-        const animes = data.anime;
-        const jikanAnimes: Jinkan[] = animes.map(
-          ({
-            mal_id,
-            title,
-            image_url,
-            synopsis,
-            genres,
-            producers,
-            score,
-            themes,
-            demographics,
-            explicit_genres,
-            r18,
-            kids,
-          }) => {
-            const date = -1;
-            const [animeProducers] = producers;
-            const animeGenres = [genres, themes, demographics, explicit_genres];
-            return {
-              mal_id,
-              title,
-              image_url,
-              synopsis,
-              airing_start: date,
-              genres: animeGenres.flatMap((genre) => genre),
-              producers: animeProducers,
-              score,
-              r18,
-              kids,
-            };
-          }
-        );
-        return jikanAnimes;
+        return data.map((animesHeroku: heroModel) => {
+          const url = this.formatLink(animesHeroku.title);
+          return {
+            title: animesHeroku.title,
+            image_url: animesHeroku.image_url,
+            weekday: animesHeroku.weekday,
+            airing: animesHeroku.airing,
+            external_links: [
+              {
+                name: 'BetterAnime',
+                url: this.BetterAnimeLink + url,
+              },
+            ],
+          };
+        });
       })
     );
-  }
-
-  getAnimes(): void {
-    const query = new Parse.Query('AnimeList');
-    const queryFind = query.findAll();
-    this.animes$ = defer(async () => {
-      const data = await queryFind;
-      const animeList = data.map(({ attributes }) => {
-        const data = { ...attributes };
-        delete data['createdAt'];
-        delete data['updatedAt'];
-        return data as Jinkan;
-      });
-      return animeList;
-    });
   }
 
   search(busca: string): void {

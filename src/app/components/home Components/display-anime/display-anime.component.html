@@ -1,0 +1,7 @@
+<div class="wrapper">
+  <div *ngFor="let anime of animes">
+    <app-card-anime [day]="day" [animes]="anime"></app-card-anime>
+  </div>
+</div>
+
+<div class="gif" *ngIf="day == 'gif'"></div>

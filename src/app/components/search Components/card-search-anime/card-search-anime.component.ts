@@ -1,7 +1,8 @@
-import { Component, Input } from '@angular/core';
 import { DatumSearch } from 'src/app/model/anime.model';
 import { AnimesService } from 'src/app/services/animes.service';
 import { GlobalVariablesService } from 'src/app/services/global-variables.service';
+
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-card-search-anime',

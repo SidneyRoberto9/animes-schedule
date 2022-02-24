@@ -1,8 +1,6 @@
 import { Observable } from 'rxjs';
-
+import { heroResult } from 'src/app/model/heroku.model';
 import { Component, Input, OnInit } from '@angular/core';
-
-import { Jinkan } from '../../model/anime.model';
 
 @Component({
   selector: 'app-display-animes',
@@ -10,15 +8,12 @@ import { Jinkan } from '../../model/anime.model';
   styleUrls: ['./display-anime.component.scss'],
 })
 export class DisplayAnimeComponent implements OnInit {
-  @Input() day?: number;
-  @Input() animes$?: Observable<Jinkan[]>;
-  @Input() detalhes?: boolean;
+  @Input() day: string;
+  @Input() animes$: Observable<heroResult[]>;
 
-  selectedValue: string = 'title';
-  filterValue: string = 'public';
-  animes: Jinkan[];
+  animes: heroResult[];
 
   ngOnInit() {
-    this.animes$?.subscribe((anime) => (this.animes = anime));
+    this.animes$.subscribe((anime) => (this.animes = anime));
   }
 }

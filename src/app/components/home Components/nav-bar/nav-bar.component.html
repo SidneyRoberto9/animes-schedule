@@ -10,7 +10,7 @@
       <button
         [ngClass]="{ ativo: selectedBtn == btn }"
         [ngClass]="{ ativo: weekDay == i - 1 }"
-        (click)="selectedDay(i - 1); selectBtn(btn)"
+        (click)="selectedDay(buttons[i]); selectBtn(btn)"
       >
         {{ btn }}
       </button>
