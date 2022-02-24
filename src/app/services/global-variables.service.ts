@@ -11,22 +11,11 @@ export class GlobalVariablesService {
   private dayWeekSource = new BehaviorSubject<string>('todos');
   getDayWeek$ = this.dayWeekSource.asObservable();
 
-  private loadingSource = new BehaviorSubject<boolean>(false);
-  getLoading$ = this.loadingSource.asObservable();
-
   detailsSearch = new BehaviorSubject<boolean>(true);
 
   ActualanimeSearch = new BehaviorSubject<DatumSearch>({} as DatumSearch);
 
   constructor() {}
-
-  loading_show() {
-    this.loadingSource.next(true);
-  }
-
-  loading_hide() {
-    this.loadingSource.next(false);
-  }
 
   setActualAnimeSearch(anime: DatumSearch) {
     this.ActualanimeSearch.next(anime);
