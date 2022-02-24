@@ -1,6 +1,11 @@
 <div class="display">
   <app-nav-bar></app-nav-bar>
 
+  <mat-progress-spinner
+    [mode]="'indeterminate'"
+    *ngIf="loading$ | async"
+  ></mat-progress-spinner>
+
   <div class="content">
     <app-display-animes
       [day]="day"

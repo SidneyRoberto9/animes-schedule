@@ -12,6 +12,7 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 export class HomePage implements OnInit {
   day: string;
   detalhes: boolean;
+  loading$ = this.global.getLoading$;
 
   constructor(
     private animesService: AnimesService,

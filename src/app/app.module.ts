@@ -1,4 +1,4 @@
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
@@ -20,6 +20,7 @@ import { NavBarComponent } from './components/home Components/nav-bar/nav-bar.co
 import { CardSearchAnimeComponent } from './components/search Components/card-search-anime/card-search-anime.component';
 import { DetailsSearchAnimeComponent } from './components/search Components/details-search-anime/details-search-anime.component';
 import { DisplaySearchAnimeComponent } from './components/search Components/display-search-anime/display-search-anime.component';
+import { NetworkInterceptor } from './interceptor/network.interceptor';
 import { HomePage } from './pages/home/home.page';
 import { SearchPage } from './pages/search/search.page';
 import { SortByPipe } from './pipes/sort-by.pipe';
@@ -53,7 +54,13 @@ import { SortByPipe } from './pipes/sort-by.pipe';
     MatInputModule,
     MatProgressSpinnerModule,
   ],
-  providers: [],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: NetworkInterceptor,
+      multi: true,
+    },
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
