@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { DatumSearch, RootObjectSearch } from '../model/anime.model';
 import { heroModel, heroResult } from '../model/heroku.model';
+import { GlobalVariablesService } from './global-variables.service';
 
 @Injectable({
   providedIn: 'root',
@@ -15,7 +16,10 @@ export class AnimesService {
   BASE_SEARCH_URL = 'https://api.jikan.moe/v4/anime?q=${busca}&order_by=rank';
   BetterAnimeLink = 'https://betteranime.net/anime/legendado/';
 
-  constructor(private http: HttpClient) {}
+  constructor(
+    private http: HttpClient,
+    private global: GlobalVariablesService
+  ) {}
 
   formatLink(link: string) {
     link = link.toLowerCase();
@@ -26,26 +30,29 @@ export class AnimesService {
     return link;
   }
 
-  getAnimesHeroku(): void {
-    this.animesHeroku$ = this.http.get<heroModel[]>(this.BASE_URL_HEROKU).pipe(
-      map((data) => {
-        return data.map((animesHeroku: heroModel) => {
-          const url = this.formatLink(animesHeroku.title);
-          return {
-            title: animesHeroku.title,
-            image_url: animesHeroku.image_url,
-            weekday: animesHeroku.weekday,
-            airing: animesHeroku.airing,
-            external_links: [
-              {
-                name: 'BetterAnime',
-                url: this.BetterAnimeLink + url,
-              },
-            ],
-          };
-        });
-      })
-    );
+  async getAnimesHeroku() {
+    this.animesHeroku$ = await this.http
+      .get<heroModel[]>(this.BASE_URL_HEROKU)
+      .pipe(
+        map((data) => {
+          return data.map((animesHeroku: heroModel) => {
+            const url = this.formatLink(animesHeroku.title);
+            return {
+              title: animesHeroku.title,
+              image_url: animesHeroku.image_url,
+              weekday: animesHeroku.weekday,
+              airing: animesHeroku.airing,
+              external_links: [
+                {
+                  name: 'BetterAnime',
+                  url: this.BetterAnimeLink + url,
+                },
+              ],
+            };
+          });
+        })
+      );
+    this.global.setLoading(false);
   }
 
   search(busca: string): void {
