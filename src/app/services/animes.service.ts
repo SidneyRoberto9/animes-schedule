@@ -52,7 +52,6 @@ export class AnimesService {
           });
         })
       );
-    this.global.setLoading(false);
   }
 
   search(busca: string): void {

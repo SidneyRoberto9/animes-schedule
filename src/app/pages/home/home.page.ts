@@ -13,13 +13,11 @@ export class HomePage implements OnInit {
   day: string;
   detalhes: boolean;
   showNav: boolean = true;
-  loading: boolean;
 
   constructor(
     private animesService: AnimesService,
     private global: GlobalVariablesService
   ) {
-    this.global.getLoading().subscribe((loading) => (this.loading = loading));
     this.animesService.getAnimesHeroku();
   }
 
