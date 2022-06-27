@@ -1,7 +1,17 @@
-<div class="wrapper">
-  <div *ngFor="let anime of animes">
-    <app-card-anime [day]="day" [animes]="anime"></app-card-anime>
-  </div>
-</div>
+<main class="anime-content">
+  <ng-template [ngIf]="animes != null" [ngIfElse]="loading">
+    <div class="wrapper">
+      <div *ngFor="let anime of animes">
+        <app-card-anime [day]="day" [animes]="anime"></app-card-anime>
+      </div>
+    </div>
+  </ng-template>
 
-<div class="gif" *ngIf="day == 'gif'"></div>
+  <ng-template #loading>
+    <div class="load">
+      <div class="loader">Loading...</div>
+    </div>
+  </ng-template>
+</main>
+
+<!-- <div class="gif"></div> -->

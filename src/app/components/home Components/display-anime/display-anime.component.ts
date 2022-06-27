@@ -1,5 +1,6 @@
 import { Observable } from 'rxjs';
 import { heroResult } from 'src/app/model/heroku.model';
+
 import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
@@ -9,9 +10,9 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class DisplayAnimeComponent implements OnInit {
   @Input() day: string;
-  @Input() animes$: Observable<heroResult[]>;
+  @Input() public animes$: Observable<heroResult[]>;
 
-  animes: heroResult[];
+  animes: heroResult[] = null;
 
   ngOnInit() {
     this.animes$.subscribe((anime) => (this.animes = anime));

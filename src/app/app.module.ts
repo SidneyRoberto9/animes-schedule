@@ -11,14 +11,23 @@ import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CardAnimeComponent } from './components/home Components/card-anime/card-anime.component';
-import { DisplayAnimeComponent } from './components/home Components/display-anime/display-anime.component';
+import {
+    DisplayAnimeComponent
+} from './components/home Components/display-anime/display-anime.component';
 import { NavBarComponent } from './components/home Components/nav-bar/nav-bar.component';
-import { CardSearchAnimeComponent } from './components/search Components/card-search-anime/card-search-anime.component';
-import { DetailsSearchAnimeComponent } from './components/search Components/details-search-anime/details-search-anime.component';
-import { DisplaySearchAnimeComponent } from './components/search Components/display-search-anime/display-search-anime.component';
+import {
+    CardSearchAnimeComponent
+} from './components/search Components/card-search-anime/card-search-anime.component';
+import {
+    DetailsSearchAnimeComponent
+} from './components/search Components/details-search-anime/details-search-anime.component';
+import {
+    DisplaySearchAnimeComponent
+} from './components/search Components/display-search-anime/display-search-anime.component';
 import { HomePage } from './pages/home/home.page';
 import { SearchPage } from './pages/search/search.page';
 import { SortByPipe } from './pipes/sort-by.pipe';

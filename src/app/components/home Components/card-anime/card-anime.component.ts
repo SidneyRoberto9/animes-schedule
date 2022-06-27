@@ -1,5 +1,6 @@
 import { heroResult } from 'src/app/model/heroku.model';
 import { GlobalVariablesService } from 'src/app/services/global-variables.service';
+
 import { Component, Input } from '@angular/core';
 
 @Component({

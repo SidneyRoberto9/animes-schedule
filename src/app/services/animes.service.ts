@@ -1,6 +1,8 @@
 import { map, Observable } from 'rxjs';
+
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+
 import { DatumSearch, RootObjectSearch } from '../model/anime.model';
 import { heroModel, heroResult } from '../model/heroku.model';
 import { GlobalVariablesService } from './global-variables.service';

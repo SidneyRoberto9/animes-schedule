@@ -1,6 +1,8 @@
 import { GlobalVariablesService } from 'src/app/services/global-variables.service';
+
 import { Component, OnInit } from '@angular/core';
 import { _MatSlideToggleRequiredValidatorModule } from '@angular/material/slide-toggle';
+
 import { buttons, dia } from './data';
 
 @Component({
